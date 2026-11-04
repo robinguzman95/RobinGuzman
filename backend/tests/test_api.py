@@ -62,7 +62,8 @@ def test_health_reports_last_draw(client):
 
 def test_draws_paginated_and_filtered(real_client):
     body = real_client.get("/games/baloto/draws", params={"page_size": 3}).json()
-    assert body["total"] == 171 and len(body["items"]) == 3
+    in_csv = len(read_csv(REPO_ROOT / "data" / "raw" / "baloto.csv", "baloto").records)
+    assert body["total"] == in_csv >= 171 and len(body["items"]) == 3
     assert body["items"][0]["draw_number"] == 2730
     assert [b["number"] for b in body["items"][0]["balls"]] == [18, 19, 20, 31, 43]
     assert body["items"][0]["extra"] == 14

@@ -6,11 +6,13 @@ Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
 
 ## Estado
 
-- [x] Fase 1 — Datos: 684 sorteos (oct 2025 – nov 2026) de los cuatro juegos, validados;
-  1 hueco documentado en `data/raw/known_gaps.csv`
+- [x] Fase 1 — Datos: histórico completo publicado (Baloto/Revancha 650 sorteos desde mayo
+  2021, MiLoto 635 desde oct 2023, ColorLoto 231 desde ago 2024), validado; 1 hueco
+  documentado en `data/raw/known_gaps.csv`
 - [x] Fase 2 — Análisis: frecuencias, calientes/fríos, pares, chi-cuadrado corregido, rachas
   exactas, popularidad; `/games/{code}/stats` y `/draws`. Ver [conteo manual](docs/conteo_manual_fase2.md)
-- [ ] Fase 3 — Backtest
+- [x] Fase 3 — Backtest: 5 estrategias × 3 ventanas × 4 juegos sobre el histórico completo
+  (Baloto desde 2021). **Ninguna le gana al azar** → [resultados](docs/resultados_backtest.md)
 - [ ] Fase 4 — Web y despliegue
 
 ## Empezar

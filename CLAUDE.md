@@ -32,6 +32,15 @@ como **advertencia**, no como error.
   sin semilla explícita.
 - Se reporta: aciertos promedio, distribución de aciertos, p5/media/p95 de la línea base y p-valor.
 - La ventana principal se declara antes de correr; las demás son análisis de sensibilidad.
+  **Declarada: 100 sorteos** (`PRIMARY_WINDOW` en `backtest/engine.py`); sensibilidad: 50 y 200.
+  No cambiarla después de ver resultados.
+- El motor entrega la historia como tupla y verifica que todo sorteo tenga número < t
+  (`LookAheadError`). `tests/test_backtest.py` tiene la prueba espía, el "oráculo" y la de
+  independencia de sorteos futuros: deben seguir pasando.
+- Línea base: aciertos hipergeométricos H(N, K, K) simulados con numpy (equivale a jugadas al
+  azar contra los mismos sorteos); media teórica K²/N. p-valor de una cola con +1.
+- "Le gana al azar" solo si promedio > p95 **y** p < α/m (Bonferroni sobre todas las
+  combinaciones corridas juntas, `lotolab backtest-all`). Una corrida suelta de la API lo dice.
 
 ## Análisis (Fase 2)
 

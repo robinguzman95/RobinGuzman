@@ -6,11 +6,13 @@ from fastapi import Depends, FastAPI
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
+from app.api.backtest import router as backtest_router
 from app.api.games import router as games_router
 from app.db import get_session
 
-app = FastAPI(title="LotoLab", version="0.2.0")
+app = FastAPI(title="LotoLab", version="0.3.0")
 app.include_router(games_router)
+app.include_router(backtest_router)
 
 
 @app.get("/health")

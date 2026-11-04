@@ -95,6 +95,45 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return status
 
 
+def _records_by_game(codes: list[str]) -> dict:
+    from app.db import get_sessionmaker
+    from app.ingest.records import records_from_db
+
+    with get_sessionmaker()() as session:
+        return {code: records_from_db(session, code) for code in codes}
+
+
+def cmd_backtest(args: argparse.Namespace) -> int:
+    from app.backtest.engine import run_backtest
+    from app.backtest.strategies import get_strategy
+    from app.games import get_game
+
+    game = get_game(args.game)
+    recs = _records_by_game([game.code])[game.code]
+    o = run_backtest(recs, game, get_strategy(args.strategy), args.strategy, window=args.window, seed=args.seed)
+    print(f"{game.name} · {o.strategy} · ventana {o.window} · {o.n_draws} sorteos ({o.date_from} → {o.date_to})")
+    print(f"  aciertos/sorteo {o.avg_hits:.3f}  ·  azar {o.baseline.mean:.3f} [p5 {o.baseline.p5:.3f} – p95 {o.baseline.p95:.3f}]")
+    print(f"  distribución {o.hit_distribution}  ·  p-valor {o.p_value:.3f}")
+    print(f"  → {o.verdict()}  ·  premio mayor: {game.odds_text()}")
+    return 0
+
+
+def cmd_backtest_all(args: argparse.Namespace) -> int:
+    from app.backtest.report import render_markdown, run_all
+    from app.config import REPO_ROOT
+    from app.games import GAMES
+
+    codes = args.game or list(GAMES)
+    rows, alpha_b, notes = run_all(_records_by_game(codes), args.strategy, seed=args.seed)
+    md = render_markdown(rows, alpha_b, notes)
+    out = Path(args.out) if args.out else REPO_ROOT / "docs" / "resultados_backtest.md"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(md, encoding="utf-8")
+    winners = sum(r.significant_bonferroni for r in rows)
+    print(f"{len(rows)} combinaciones, α corregido {alpha_b:.5f}, {winners} superan al azar → {out}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     from app.games import GAMES
 
@@ -117,6 +156,23 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("--game", action="append", choices=list(GAMES))
     v.add_argument("--min-months", type=float, default=12.0)
     v.set_defaults(func=cmd_validate)
+
+    from app.backtest.engine import PRIMARY_WINDOW
+    from app.backtest.strategies import STRATEGIES
+
+    b = sub.add_parser("backtest", help="una corrida de backtest frente al azar")
+    b.add_argument("--game", required=True, choices=list(GAMES))
+    b.add_argument("--strategy", required=True, choices=list(STRATEGIES))
+    b.add_argument("--window", type=int, default=PRIMARY_WINDOW)
+    b.add_argument("--seed", type=int, default=0)
+    b.set_defaults(func=cmd_backtest)
+
+    ba = sub.add_parser("backtest-all", help="todas las combinaciones con Bonferroni → docs/resultados_backtest.md")
+    ba.add_argument("--game", action="append", choices=list(GAMES))
+    ba.add_argument("--strategy", action="append", choices=list(STRATEGIES))
+    ba.add_argument("--seed", type=int, default=0)
+    ba.add_argument("--out")
+    ba.set_defaults(func=cmd_backtest_all)
 
     args = p.parse_args(argv)
     return args.func(args)
