@@ -33,6 +33,17 @@ como **advertencia**, no como error.
 - Se reporta: aciertos promedio, distribución de aciertos, p5/media/p95 de la línea base y p-valor.
 - La ventana principal se declara antes de correr; las demás son análisis de sensibilidad.
 
+## Análisis (Fase 2)
+
+- `app/analysis/` son funciones puras sobre `list[DrawRecord]`; el backtest las reutiliza
+  pasándoles solo la historia anterior a cada sorteo. Nada en `analysis/` consulta la BD.
+- Unidad de conteo: la balota (número, color); en juegos sin color, color = None.
+- Chi-cuadrado: siempre con la corrección por extracción sin reposición c = (N−K)/(N−1).
+- Rachas: p-valor exacto (la normal da falsos positivos con balotas poco frecuentes) y
+  Bonferroni sobre todas las balotas.
+- El puntaje de popularidad es heurístico y la cuadrícula del tiquete es aproximada: decirlo
+  siempre que se muestre.
+
 ## Datos
 
 - La vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`. El scraper solo

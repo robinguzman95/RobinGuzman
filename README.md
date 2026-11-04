@@ -8,7 +8,8 @@ Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
 
 - [x] Fase 1 — Datos: 684 sorteos (oct 2025 – nov 2026) de los cuatro juegos, validados;
   1 hueco documentado en `data/raw/known_gaps.csv`
-- [ ] Fase 2 — Análisis
+- [x] Fase 2 — Análisis: frecuencias, calientes/fríos, pares, chi-cuadrado corregido, rachas
+  exactas, popularidad; `/games/{code}/stats` y `/draws`. Ver [conteo manual](docs/conteo_manual_fase2.md)
 - [ ] Fase 3 — Backtest
 - [ ] Fase 4 — Web y despliegue
 
