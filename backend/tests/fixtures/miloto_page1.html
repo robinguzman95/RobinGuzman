@@ -1,0 +1,1469 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Language" content="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>MiLoto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
+    <meta name="description" content="MiLoto">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <link media="print" onload="this.media='all'; this.onload=null;" rel="preconnect" href="https://fonts.googleapis.com">
+    <link media="print" onload="this.media='all'; this.onload=null;" rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link media="print" onload="this.media='all'; this.onload=null;" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/css3.css" rel="stylesheet" integrity="sha384-Ho5XxF5rN4U58iwY3UO1ayQ2ZY/+9IQ494iZ9deBMFv/r2DqPUau9xPgph1eWgqP" crossorigin="anonymous">
+    <link media="print" onload="this.media='all'; this.onload=null;" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/css4.css" rel="stylesheet" integrity="sha384-Ukmlw8yv9M7BkobMccBia90sMNP0Js8fOL2swpbB8l6P8EHKU0b9UguJzSV5xGZp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/bootstrap-5.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/animate.min.css" media="print" onload="this.media='all'; this.onload=null;" integrity="sha384-Gu3KVV2H9d+yA4QDpVB7VcOyhJlAVrcXd0thEjr4KznfaFPLe0xQJyonVxONa4ZC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/jquery.countdown-miloto.css" media="print" onload="this.media='all'; this.onload=null;" integrity="sha384-bTRxnIrkXU/Oyfqb98IBuc57ZlEfJ/7tCfodjJkovQC3TveIc1uUhMmCdaooPkWA" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/style-miloto-new-v5.css" media="print" onload="this.media='all'; this.onload=null;">
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/style-mobile-miloto-new-v2.css" media="print" onload="this.media='all'; this.onload=null;" integrity="sha384-h50pMs4jdHU+n8oIUe6ubAflqwnubsIMaC9ryXvxOtPJtSEgokx/TaXfDHWLTyB4" crossorigin="anonymous">
+    <style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    .style-4cf04aa2 { background-color: #1c2f73; max-width: 400px;min-width: 400px; }
+    </style>
+    
+    <link rel="stylesheet" href="https://baloto-dev-assets.s3.amazonaws.com/static/css/bootstrap-datepicker3.min.css" media="print" onload="this.media='all'; this.onload=null;" integrity="sha384-wbeLxDDgZO89gqk1Y3p8Wm8axJzI4sO00EjHEF6cLQd8jvMOgGx8EIWrXB8Molub" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="https://baloto-dev-assets.s3.amazonaws.com/static/miloto/img/favicon.svg%3Fv%3D2" type="image/x-icon" />
+    <!-- Google Tag Manager -->
+    <script async nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MT2L7W3');
+    </script>        
+    <!-- End Google Tag Manager -->
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MT2L7W3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <img height="1" width="1" class="d-none" src="https://www.facebook.com/tr?id=768142434779934&ev=PageView&noscript=1" />
+    
+    
+    <style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    .promo-banner {
+      background: linear-gradient(90deg, #fff200 0%, #fff200 50%, #fff200 100%);
+      color: #064679;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .promo-text strong.highlight {
+      color: #064679;
+      font-weight: 700;
+    }
+    .promo-btn {
+      background-color: #fed201;
+      color: #000;
+      font-weight: 600;
+      border-radius: 20px;
+      border: none;
+    }
+    .promo-btn:hover {
+      background-color: #fed201;
+    }
+    .btn-purple-sticky {
+       color: #FFF !important;
+      background: #0C2577 !important;
+      border-color: #0C2577 !important;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    @media (max-width: 600px) {
+        .f-small {
+          font-size: 11px;
+        }
+        #apuestaAquiInicioHeader {
+          font-size: 12px;
+        }
+    }
+</style>
+
+<div class="container-fluid promo-banner py-1 no-mobile">
+  <div class="d-flex justify-content-between align-items-center">
+    
+    <div class="promo-text text-center w-100">
+      ¿Aún no juegas <strong class="highlight"> Baloto </strong> en línea?
+      <a id="apuestaAquiInicioHeader" href="https://apuestaaqui.baloto.com/?_gl=1*1aet2uz*_gcl_au*ODgxMDEzOTQuMTc3OTE5MzYwNQ..*_ga*MTQyMTkzNzAwOS4xNzc5MTkzNjA1*_ga_JD0PC19X7Z*czE3ODQ3NTI0MzIkbzY1JGcxJHQxNzg0NzUyNDU0JGozOCRsMCRoMA..*_ga_YLW65NGT1W*czE3ODQ3NTIzMjUkbzY2JGcxJHQxNzg0NzUyNDU4JGozNCRsMCRoMA..#/seguridad/registro" target="_blank" class="link-inicio gotham-book btn btn-purple-sticky mt-2 mb-2 px-4 ms-3">Registrate aquí</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid promo-banner py-2 mobile">
+  <div class="d-flex justify-content-between align-items-center">
+    
+    <div class="promo-text text-center w-100">
+      <div class="row m-0">
+        <div class="p-0 col-8 f-small">
+          ¿Aún no juegas <strong class="highlight">Baloto</strong> en línea?
+        </div>
+        <div class="p-0 col-4">
+          <a id="apuestaAquiInicioHeader" href="https://apuestaaqui.baloto.com/?_gl=1*1aet2uz*_gcl_au*ODgxMDEzOTQuMTc3OTE5MzYwNQ..*_ga*MTQyMTkzNzAwOS4xNzc5MTkzNjA1*_ga_JD0PC19X7Z*czE3ODQ3NTI0MzIkbzY1JGcxJHQxNzg0NzUyNDU0JGozOCRsMCRoMA..*_ga_YLW65NGT1W*czE3ODQ3NTIzMjUkbzY2JGcxJHQxNzg0NzUyNDU4JGozNCRsMCRoMA..#/seguridad/registro" target="_blank" class="link-inicio gotham-book btn btn-purple-sticky px-2 ms-3">Registrate aquí</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    <style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-14040749 { border: 20px solid #44d1f7;border-radius: 30px }
+.style-76fd11b9 { background-color: #f9de75; color: }
+</style>
+
+
+    
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    @media (min-width: 1200px) {
+        #cont-container {
+            max-width: 1350px;
+        }
+    }
+    @media screen and (min-width: 1000px) and (max-width: 1250px) {
+        #navbarSupportedContent .nav-link {
+            font-size: 14px;
+        }
+        #apuestaAquiRegistroHeader {
+            font-size: 14px;
+        }
+        #apuestaAquiInicioHeader {
+            font-size: 14px;
+        }
+      }
+      
+</style>
+
+<div id="header-baloto">
+    <div id="cont-container" class="container">
+        <div class="row mt-2">
+            <div class="col-md-1"></div>
+            <div class="no-mobile col-md-2 col-6 text-center order-1 order-md-1 order-lg-1 px-0 margin-logo">
+                <a aria-label="Enlace para el inicio de Baloto" href="/">
+                    <img loading="lazy" height="70px" width="140px" alt="Baloto Logo" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/webp/logo_140.webp"/>
+                </a>
+            </div>
+            <div class="col-md-9 col-12 order-3 order-md-2 order-lg-2 px-0 margin-menu">
+                
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+  .btn-yellow-miloto {
+    background-color: #ffe300 !important;
+    border-color: #ffe300 !important;
+    border-radius: 20px;
+    font-weight: 700;
+    color: #145c9c !important
+  }
+  .btn-button-blue-menu {
+    background-color: #064679 !important;
+    border-color: #064679 !important;
+    color: #ffe300 !important;
+    border-radius: 20px;
+    font-weight: bold;
+}
+</style>
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-9ac8de13 { margin-top: -8px;margin-left: 3px; }
+.style-3957829a { margin-top: -8px;margin-left: 8px; }
+</style>
+
+<nav class="navbar navbar-expand-lg mt-2">
+  <div class="container-fluid px-0">
+    <div class="row mobile-flex w-100">
+      <div class="col-3 mt-2 text-center">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="col-4 px-0">
+        <a href="/">
+          <img height="104px" width="206px" alt="Baloto Logo" class="img-fluid" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/webp/logo_206.webp"/>
+        </a>
+      </div>
+      <div class="col-5 pe-0">
+        <div>
+          <a id="apuestaAquiInicioHeader" href="https://apuestaaqui.baloto.com/#/seguridad/login" target="_blank" class="gotham-book btn btn-yellow-miloto px-4 w-100">Juega aquí</a>
+        </div>
+        <div>
+            <a id="apuestaAquiRegistroHeader" href="https://apuestaaqui.baloto.com/#/seguridad/registro" target="_blank" class="gotham-book btn btn-button-blue-menu mt-2 mb-2 px-4 w-100">Regístrate</a>
+        </div>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item dropdown gotham-book">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ¿Qué es?
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/que-es-baloto">Baloto Revancha</a></li>
+            <li><a class="dropdown-item" href="/miloto/que-es-miloto/">MiLoto</a></li>
+            <li><a class="dropdown-item" href="/colorloto">ColorLOTO</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown gotham-book">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ¿Cómo Jugar?
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/como-jugar">Baloto Revancha</a></li>
+            <li><a class="dropdown-item" href="/miloto/como-jugar/">MiLoto</a></li>
+            <li><a class="dropdown-item" href="/colorloto">ColorLOTO</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown gotham-book">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Resultados
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/resultados">Resultados Baloto</a></li>
+            <li><a class="dropdown-item" href="/miloto/resultados/">Resultados MiLoto</a></li>
+            <li><a class="dropdown-item" href="/colorloto/resultados">Resultados ColorLOTO</a></li>
+            <li><a class="dropdown-item" href="/pago-de-premios">Pago de premios</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown gotham-book">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ¿Dónde Comprar?
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/puntos-baloto">Puntos de venta</a></li>
+            <li><a class="dropdown-item" href="/juegaenlinea">Internet</a></li>
+            <li><a class="dropdown-item" href="/pago-de-premios">Donde reclamar premios</a></li>
+            <li><a class="dropdown-item" href="/preguntas-frecuentes">Preguntas frecuentes</a></li>
+            <li><a class="dropdown-item" href="/canales-oficiales-baloto" target="_blank">Confianza</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link gotham-book" href="#">
+          </a>
+        </li>
+        <li class="nav-item no-mobile style-9ac8de13" >
+          <a id="apuestaAquiInicioHeader" href="https://apuestaaqui.baloto.com/#/seguridad/login" target="_blank" class="gotham-book btn btn-yellow-miloto mt-2 mb-2 px-4">Juega aquí</a>
+        </li>
+        <li class="nav-item no-mobile style-3957829a" >
+          <a id="apuestaAquiRegistroHeader" href="https://apuestaaqui.baloto.com/#/seguridad/registro" target="_blank" class="gotham-book btn btn-button-blue-menu mt-2 mb-2 px-4">Regístrate</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+    
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-29f67488 { margin-top: 100px; background-image: url("https://baloto-dev-assets.s3.amazonaws.com/static/miloto/img/miloto-results-bg.jpg"); background-size: cover; background-repeat: no-repeat }
+.style-b3d54f58 { margin-top: -65px }
+</style>
+
+
+
+<div class="style-29f67488">
+
+  <div class="text-center">
+    <img class="style-b3d54f58" src="https://baloto-dev-assets.s3.amazonaws.com/static/miloto/img/home-miloto/logo-medium-miloto.png" />
+  </div>
+
+  <div class="text-center mt-4 mb-4">
+    <h1 class="outfit-black dark-blue">RESULTADOS</h1>
+  </div>
+
+  <div class="mt-2 text-center dark-blue fs-5">
+    <div class="outfit-black"><strong>SORTEO #635</strong></div>
+    <div class="outfit-medium">Martes 3 de Noviembre de 2026</div>
+  </div>
+
+  <div id="container-banner-results">
+      <div class="row m-0">
+          <div class="col-md-3"></div>
+          <div class="col-md-6">
+            <div id="contenedor_luck" class="pb-3 mt-0 mt-md-0 mt-lg-0 mb-3">
+              <div class="row d-flex justify-content-center">
+    
+        <div class="col-md-2 col-2">
+            <div class="text-center">
+                <div class="yellow-ball">
+                    08
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-2 col-2">
+            <div class="text-center">
+                <div class="yellow-ball">
+                    13
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-2 col-2">
+            <div class="text-center">
+                <div class="yellow-ball">
+                    20
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-2 col-2">
+            <div class="text-center">
+                <div class="yellow-ball">
+                    24
+                </div>
+            </div>
+        </div>
+    
+        <div class="col-md-2 col-2">
+            <div class="text-center">
+                <div class="yellow-ball">
+                    25
+                </div>
+            </div>
+        </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="row mx-0 mb-5">
+              <div class="col-md-6 col-12">
+                <a class="d-block btn btn-outline-primary btn-detail" href="https://apuestaaqui.baloto.com/#/seguridad/login" target="_blank">JUEGA EN LÍNEA AQUÍ</a>
+              </div>
+              <div class="col-md-6 col-12 mt-2 mt-md-0 mt-lg-0">
+                <a class="d-block btn btn-outline-primary btn-detail" href="/pago-de-premios">CÓMO RECLAMAR TU PREMIO</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+      </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    .miloto-number {
+        cursor: pointer;
+        border: 2px solid #044fcf;
+        padding: 4px;
+        margin: 5px;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        display: inline-block;
+        font-weight: bold;
+    }
+    .miloto-number.selected {
+        background-color: #044fcf;
+        color: white;
+    }
+    .miloto-number.disabled {
+        background-color: #e0e0e0;
+        border-color: #e0e0e0;
+        color: #a0a0a0;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    #verifycontainer {
+        background: #8062cb;
+        border-radius: 30px;
+    }
+    .btn-yellow:disabled{
+        background-color: #61dafc !important;
+    }
+</style>
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-6cc1a686 { color: #fcef92 }
+</style>
+
+
+<div class="p-4 m-5" id="verifycontainer">
+    <div class="gotham-black fs-4 text-center">
+        <strong class="style-6cc1a686">
+            VERIFICADOR DE RESULTADOS
+        </strong>
+    </div>
+    <div class="text-center white-color">
+        <div class="mt-3">
+            <strong>¿Eres un ganador?</strong>
+        </div>
+        <div>
+            Solo selecciona los números de tu jugada, haz clic en <br/><strong>"Comprobar resultados"</strong> y obtén al instante la información<br />de tu tiquete. ¡Así de fácil es verificar tu MiLoto!
+        </div>
+    </div>
+</div>
+
+<div class="text-center fs-4 dark-blue gotham-black">
+    <strong>
+        ELIGE TUS NÚMEROS
+    </strong>
+</div>
+
+<div class="row mx-0 my-3">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="text-center" id="number-container">
+            
+                <span class="miloto-number rounded">
+                    1
+                </span>
+            
+                <span class="miloto-number rounded">
+                    2
+                </span>
+            
+                <span class="miloto-number rounded">
+                    3
+                </span>
+            
+                <span class="miloto-number rounded">
+                    4
+                </span>
+            
+                <span class="miloto-number rounded">
+                    5
+                </span>
+            
+                <span class="miloto-number rounded">
+                    6
+                </span>
+            
+                <span class="miloto-number rounded">
+                    7
+                </span>
+            
+                <span class="miloto-number rounded">
+                    8
+                </span>
+            
+                <span class="miloto-number rounded">
+                    9
+                </span>
+            
+                <span class="miloto-number rounded">
+                    10
+                </span>
+            
+                <span class="miloto-number rounded">
+                    11
+                </span>
+            
+                <span class="miloto-number rounded">
+                    12
+                </span>
+            
+                <span class="miloto-number rounded">
+                    13
+                </span>
+            
+                <span class="miloto-number rounded">
+                    14
+                </span>
+            
+                <span class="miloto-number rounded">
+                    15
+                </span>
+            
+                <span class="miloto-number rounded">
+                    16
+                </span>
+            
+                <span class="miloto-number rounded">
+                    17
+                </span>
+            
+                <span class="miloto-number rounded">
+                    18
+                </span>
+            
+                <span class="miloto-number rounded">
+                    19
+                </span>
+            
+                <span class="miloto-number rounded">
+                    20
+                </span>
+            
+                <span class="miloto-number rounded">
+                    21
+                </span>
+            
+                <span class="miloto-number rounded">
+                    22
+                </span>
+            
+                <span class="miloto-number rounded">
+                    23
+                </span>
+            
+                <span class="miloto-number rounded">
+                    24
+                </span>
+            
+                <span class="miloto-number rounded">
+                    25
+                </span>
+            
+                <span class="miloto-number rounded">
+                    26
+                </span>
+            
+                <span class="miloto-number rounded">
+                    27
+                </span>
+            
+                <span class="miloto-number rounded">
+                    28
+                </span>
+            
+                <span class="miloto-number rounded">
+                    29
+                </span>
+            
+                <span class="miloto-number rounded">
+                    30
+                </span>
+            
+                <span class="miloto-number rounded">
+                    31
+                </span>
+            
+                <span class="miloto-number rounded">
+                    32
+                </span>
+            
+                <span class="miloto-number rounded">
+                    33
+                </span>
+            
+                <span class="miloto-number rounded">
+                    34
+                </span>
+            
+                <span class="miloto-number rounded">
+                    35
+                </span>
+            
+                <span class="miloto-number rounded">
+                    36
+                </span>
+            
+                <span class="miloto-number rounded">
+                    37
+                </span>
+            
+                <span class="miloto-number rounded">
+                    38
+                </span>
+            
+                <span class="miloto-number rounded">
+                    39
+                </span>
+            
+        </div>
+    </div>
+    <div class="col-md-3"></div>
+</div>
+
+<div class="row mx-0 my-5">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <div class="text-center">
+            <form action="/miloto/verificador-resultados/">
+                <input type="hidden" name="balotas" id="balotas" />
+                <button id="sendNumbersButton" type="submit" class="w-100 btn btn-yellow gotham-black bg-pink fs-5" disabled>
+                    Comprobar resultados
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+    document.addEventListener("DOMContentLoaded", function () {
+        const maxSelections = {
+            miloto: 5
+        };
+    
+        const state = {
+            miloto: []
+        };
+    
+        const selectors = {
+            miloto: {
+                container: document.getElementById("number-container"),
+                className: "miloto-number",
+                inputId: "balotas"
+            }
+        };
+    
+        function updateSelectionState(type) {
+            const selectedList = state[type];
+            const { container, className, inputId } = selectors[type];
+            const elements = container.querySelectorAll(`.${className}`);
+    
+            elements.forEach(el => {
+                const value = parseInt(el.textContent.trim());
+                const isSelected = selectedList.includes(value);
+                const maxSelected = maxSelections[type];
+    
+                el.classList.toggle("selected", isSelected);
+                el.classList.toggle("disabled", !isSelected && selectedList.length >= maxSelected);
+    
+                if (!isSelected && selectedList.length < maxSelected) {
+                    el.classList.remove("disabled");
+                }
+            });
+    
+            document.getElementById(inputId).value = selectedList.join("-");
+            updateButtonState();
+        }
+    
+        function attachClickHandlers(type) {
+            const { container, className } = selectors[type];
+            const elements = container.querySelectorAll(`.${className}`);
+            const selectedList = state[type];
+            const maxSelected = maxSelections[type];
+    
+            elements.forEach(el => {
+                el.addEventListener("click", function () {
+                    const value = parseInt(this.textContent.trim());
+                    const index = selectedList.indexOf(value);
+    
+                    if (index > -1) {
+                        selectedList.splice(index, 1);
+                    } else if (selectedList.length < maxSelected) {
+                        selectedList.push(value);
+                    }
+    
+                    updateSelectionState(type);
+                });
+            });
+        }
+    
+        function updateButtonState() {
+            const button = document.getElementById("sendNumbersButton");
+            const isReady = state.miloto.length === maxSelections.miloto;
+    
+            button.disabled = !isReady;
+        }
+    
+        attachClickHandlers("miloto");
+    });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="row m-0" id="container-que-es">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            
+
+            <div id="container-video">
+                <div class="fs-2 outfit-black dark-blue text-center my-5">VIDEO DEL ÚLTIMO SORTEO</div>
+                <iframe referrerpolicy="strict-origin-when-cross-origin" class="style-14040749" width="100%" height="500" src="https://www.youtube.com/embed/bwH294eO8nI?controls=1&listType=playlist&rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+
+            <h2 class="outfit-black fs-2 text-center dark-blue mt-5 mb-3">
+   HISTÓRICO DE RESULTADOS
+</h2>
+<div>
+    
+
+
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    .td-results span {
+        background: #4d99c9;
+        color: #FFF;
+        border-radius: 50px;
+        padding: 6px;
+    }
+</style>
+
+<div class="mb-4">
+    <form>
+        <div class="row m-0">
+            <div class="col-md-4">
+                <input 
+                    readonly 
+                    class="form-control date-picker bg-light-blue mt-2 mb-2 mt-md-0 mt-lg-0 mb-md-0 mb-lg-0"
+                    name="date"
+                    placeholder="Seleccione fecha..."
+                    
+                />
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-6 col-6">
+                        <button type="submit" class="w-100 btn btn-pink outfit-black bg-pink">Buscar</button>
+                    </div>
+                    <div class="col-md-6 col-6">
+                        <a href='/resultados' class="w-100 btn outfit-black btn-pink">Limpiar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="table-responsive">
+    <table class="table table-hover table-points-miloto outfit-book">
+        <thead class="text-uppercase text-center">
+            <tr>
+                <th>Fecha</th>
+                <th></th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            
+                <tr>
+                    <td>3 de Noviembre de 2026</td>
+                    <td class="td-results"><span>08</span> - <span>13</span> - <span>20</span> - <span>24</span> - <span>25</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/635/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>2 de Noviembre de 2026</td>
+                    <td class="td-results"><span>04</span> - <span>26</span> - <span>29</span> - <span>34</span> - <span>35</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/634/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>30 de Octubre de 2026</td>
+                    <td class="td-results"><span>12</span> - <span>18</span> - <span>26</span> - <span>27</span> - <span>34</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/633/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>29 de Octubre de 2026</td>
+                    <td class="td-results"><span>05</span> - <span>08</span> - <span>14</span> - <span>23</span> - <span>37</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/632/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>27 de Octubre de 2026</td>
+                    <td class="td-results"><span>14</span> - <span>19</span> - <span>21</span> - <span>23</span> - <span>34</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/631/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>26 de Octubre de 2026</td>
+                    <td class="td-results"><span>01</span> - <span>10</span> - <span>12</span> - <span>14</span> - <span>36</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/630/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>23 de Octubre de 2026</td>
+                    <td class="td-results"><span>01</span> - <span>06</span> - <span>11</span> - <span>35</span> - <span>37</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/629/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>22 de Octubre de 2026</td>
+                    <td class="td-results"><span>15</span> - <span>16</span> - <span>18</span> - <span>28</span> - <span>37</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/628/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>20 de Octubre de 2026</td>
+                    <td class="td-results"><span>12</span> - <span>13</span> - <span>14</span> - <span>33</span> - <span>36</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/627/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>19 de Octubre de 2026</td>
+                    <td class="td-results"><span>01</span> - <span>10</span> - <span>11</span> - <span>27</span> - <span>28</span></td>
+                    <td>
+                        <a class="d-block btn btn-outline-primary btn-detail" href="/miloto/resultados-miloto/626/">Ver detalle</a>
+                    </td>
+                </tr>
+            
+        </tbody>
+    </table>
+    <div class="text-center mb-4">
+            <div>
+                <strong class="current ms-3 me-3 light-blue">
+                    Página 1 de 63
+                </strong>
+            </div>
+            
+            <div class="row mt-3 mx-0">
+                <div class="col-md-6 col-12">
+                    
+                </div>
+    
+                <div class="col-md-6 col-12">
+                
+                    <div class="row">
+                        <div class="col-md-6 col-6"><a class="btn btn-pink w-100" href="?page=2">Siguiente</a></div>
+                        <div class="col-md-6 col-6"><a class="btn btn-pink w-100" href="?page=63">Última &raquo;</a></div>
+                    </div>
+                
+                </div>
+            </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class="row mb-5 mt-4">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <a class="btn btn-yellow-results w-100 outfit-black fs-4 style-76fd11b9" href="https://baloto.com/resultados" target="_blank" >
+                VER RESULTADOS BALOTO REVANCHA
+            </a>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+
+    <div class="no-mobile">
+        <a href="/pago-de-premios" target="_blank">
+            <img alt="Banner Baloto 0" src="https://baloto-dev-assets.s3.amazonaws.com/media/banners/1920_multimarcav2.webp" class="img-fluid cursor-pointer" width="1920px" height="480px" >
+        </a>
+    </div>
+
+    <div class="mobile">
+        <a href="/pago-de-premios" target="_blank">
+            <img alt="Banner Baloto 0" src="https://baloto-dev-assets.s3.amazonaws.com/media/banners/400_multimarcav2.webp" class="img-fluid cursor-pointer" width="400px" height="400px" >
+        </a>
+    </div>
+
+
+    <style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-a7619964 { margin-top: -10px;margin-bottom: -10px }
+.style-4f3992d2 { margin-top: -10px;margin-bottom: -10px }
+.style-61789d3b { margin-top: -15px; margin-bottom: -10px; }
+.style-da6ddf26 { margin-top: -15px; margin-bottom: -10px; }
+</style>
+
+
+
+<div class="fixed-bottom d-none" >
+    <div class="mt-1 mb-1 shadow container-next-contest">
+        <div class="row no-gutters">
+
+            <div class="col-md-3 col-4 text-center dark-blue">
+                <div class="mobile">
+                    <div class="fs-6"><strong>Cómpralo</strong></div>
+                    <div class="fs-6 style-a7619964" ><strong>por solo</strong></div>
+                    <div class="fs-2"><strong>$4.000</strong></div>
+                </div>
+                <div class="no-mobile">
+                    <div class="fs-4"><strong>Cómpralo</strong></div>
+                    <div class="fs-4 style-4f3992d2" ><strong>por solo</strong></div>
+                    <div class="fs-1"><strong>$4.000</strong></div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-4 text-center dark-blue border-countdown">
+                <div class="text-center">
+                    <div class="shared-accumulated">
+                        <strong>$500</strong>
+                    </div>
+                    <div class="accumulated-millions"><strong>millones acumulados</strong></div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-4 dark-blue text-center">
+                <div class="mobile">
+                    <div class="mb-md-1 mb-lg-1 mt-2 next-text"><strong>Próximo sorteo</strong></div>
+                    <div class="fs-6 style-61789d3b" ><strong>Jueves 05</strong></div>
+                    <div class="fs-6"><strong>de Noviembre</strong></div>
+                </div>
+                <div class="no-mobile">
+                    <div class="mb-md-1 mb-lg-1 mt-2 fs-4"><strong>Próximo sorteo</strong></div>
+                    <div class="fs-4 style-da6ddf26" ><strong>Jueves 05</strong></div>
+                    <div class="fs-4"><strong>de Noviembre</strong></div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-12 text-center pt-2 pl-0 pr-0 contest-yellow outfit-black">
+                <div id="defaultCountdown"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+    #footer {
+        background-color: #00207A;
+        color: #FFF;
+        padding-bottom: 100px !important;
+    }
+    #footer a {
+        margin-top: 8px;
+        color: #FFF;
+        text-decoration: none;
+    }
+    .c-pointer {
+        margin-top: 8px;
+    }
+    .yellow-color {
+        color: #FFF203;
+    }
+    .button-results-play {
+        background-color: #FFD400;
+        color: #064679 !important;
+        font-weight: bold;
+        border-radius: 20px;
+        padding: 5px 20px;
+        text-decoration: none;
+    }
+    #legalFooterContainer {
+        padding-bottom: 9.5%
+    }
+    @media (max-width: 600px) {
+        #legalFooter {
+            font-size: 9pt !important;
+        }
+        #legalFooterContainer {
+            padding-bottom: 23.5%
+        }
+    }
+</style>
+<style nonce="x7z4b9v2c5n8m1k6j3h9g2f5">
+.style-a75a0c88 { color: #fff203 !important; }
+.footer-hidden { display: none; }
+</style>
+
+
+<div class="py-4 outfit-book" id="footer">
+    <div class="container">
+        <div class="mt-3 mb-3">
+            <div class="row">
+                <div class="col-md-4 text-center text-md-start text-lg-start">
+                    <a target="_blank" href="https://apuestaaqui.baloto.com/#/seguridad/login" class="button-results-play fs-4">
+                        JUEGA EN LÍNEA
+                    </a>
+                </div>
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-5 text-center mt-4 mt-md-0 mt-lg-0">
+                    <div>
+                        <a aria-label="Enlace para el sitio de onj" href="https://operadorjuegos.com.co/" target="_blank">
+                            <img loading="lazy" alt="Jugar legal es apostarle a la salud" class="img-fluid" width="127px" height="60px" src="https://baloto-dev-assets.s3.amazonaws.com/static/new_home/logo_onj.webp" />
+                        </a>
+                    </div>
+                    <div class="text-center">
+                        <a aria-label="Enlace para el sitio de coljuegos" href="https://www.supersalud.gov.co/" target="_blank">
+                            <img loading="lazy" alt="Juega bien ser responsable es parte del juego" class="img-fluid" height="60px" src="https://baloto-dev-assets.s3.amazonaws.com/static/new_home/vigiladov1.webp" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="my-5">
+            <hr />
+        </div>
+        <div class="row m-0">
+            <div class="col-md-3">
+
+                <div class="outfit-medium mb-2 mt-2 mt-md-0 mt-lg-0">
+                    <div><a href="/juego-responsable" class="yellow-color style-a75a0c88" >Juego responsable</a></div>
+                </div>
+                <div class="mb-5">
+                    <div>
+                        <a class="d-block " href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/INSTRUCTIVO_PARA_PROCESO_DE_AUTO_EXCLUSION_Y_REVOCATORIA_v2.pdf">Instructivo autoexclusión</a>
+                    </div>
+                    <div>
+                        <a class="d-block " target="_blank" href="https://tomaelcontrol.coljuegos.gov.co/formulario/">Test</a>
+                    </div>
+                    <div>
+                        <a class="d-block " href="/juego-responsable/autoexclusion">Autoexclusión</a>
+                    </div>
+                    <div>
+                        <a class="d-block " href="/juego-responsable/autoexclusion/revocatoria">Revocatoria de autoexclusión</a>
+                    </div>
+                    <div>
+                        <a class="d-block" target="_blank" href="https://tomaelcontrol.coljuegos.gov.co/">Sitio: Toma el control</a>
+                    </div>
+                </div>
+
+                <div>
+                    El juego Baloto, su mecánica adicional y sus mecánicas complementarias son operadas por Operador Nacional de Juegos S.A.S., sociedad conformada por Grupo Empresarial en Línea S.A y Redcolsa S.A.<br /><br />Contrato de Concesión<br />No. C1855 de 2022<br />Vigencia hasta el 24 de mayo de 2027
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row m-0">
+                    <div class="col-md-4">
+                        <div class="outfit-medium mb-2 mt-2 mt-md-0 mt-lg-0">
+                            <div><strong class="yellow-color">Mapa de navegación</strong></div>
+                        </div>
+                        <div>
+                            <div>
+                                <a class="d-block " href="/que-es-baloto">¿Qué es Baloto Revancha?</a>
+                            </div>
+                            <div>
+                                <a class="d-block " href="/colorloto">¿Qué es ColorLOTO?</a>
+                            </div>
+                            <div>
+                                <a class="d-block " href="/miloto/que-es-miloto/">¿Qué es MiLoto?</a>
+                            </div>
+                            <div>
+                                <div class="c-pointer show-docs-btn">Reglamento del juego</div>
+                                <div id="docs" class="footer-hidden">
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-01.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 01 DE 2022</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-02.pdf" class="d-block " target="_blank">- ACUERDO 08 DE 2020</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-03.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 03 DE 2021</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-05.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 02 DE 2023</a>
+                                    </div>
+
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-1-2024.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 01 DEL 2024</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-2-2024-v2.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 02 DE 2024</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/acuerdo-2-2025.pdf" class="d-block " target="_blank">- ACUERDO NÚMERO 02 DE 2025</a>
+                                    </div>
+                                    <div>
+                                        <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/terminos-cookies-v2.pdf" class="d-block " target="_blank">- Términos y condiciones y política de cookies</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="https://baloto-dev-assets.s3.amazonaws.com/static/documents/politica-de-tratamiento-datos-personales-ONJ-v9.pdf" class="d-block " target="_blank">Política de Tratamiento de Datos Personales</a>
+                            </div>
+                            <div>
+                                <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/procedimiento-pago-premios-general.pdf" class="d-block " target="_blank">Procedimiento de pago de premios</a>
+                            </div>
+                            <div>
+                                <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/instructivo-para-el-pago-virtual-de-premios.pdf" class="d-block " target="_blank">Instructivo para el pago virtual de premios</a>
+                            </div>
+                            <div>
+                                <a class="d-block " href="/puntos-baloto">Puntos de venta</a>
+                            </div>
+                            <div>
+                                <a href="/puntos-baloto" class="d-block " target="_blank">Redes de comercialización</a>
+                            </div>
+                            <div>
+                                <a href="/noticias" class="d-block " target="_blank">Noticias</a>
+                            </div>
+                            <div>
+                                <a href="https://baloto-dev-assets.s3.amazonaws.com/static/docs/Nuevo-Protocolo-Tiquetes-Baloto-Web-No-Recibidos-por-Usuarios-v3.pdf" class="d-block " target="_blank">Protocolo Tiquetes Web No Recibidos</a>
+                            </div>
+                            
+                            <div>
+                                <a href="/preguntas-frecuentes" class="d-block ">Preguntas frecuentes para compra en canal digital</a>
+                            </div>
+                            <div>
+                                <a href="/canales-oficiales-baloto" class="d-block" target="_blank">Centro de Confianza</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="outfit-medium mb-2 mt-2 mt-md-0 mt-lg-0">
+                            <strong class="yellow-color">Días de sorteo</strong>
+                        </div>
+                        <div>
+                            <strong>Baloto:</strong> Lunes, miércoles y sábados entre las 11:00 p.m y las 11:15 p.m. 
+                        </div>
+                        <div class="mt-2">
+                            <strong>ColorLOTO:</strong> Lunes a las 11:40 pm y jueves a las 11:00 pm. 
+                        </div>
+                        <div class="mt-2">
+                            <strong>MiLoto:</strong> Lunes, martes, jueves y viernes entre las 10:00 p.m y las 10:15 p.m. 
+                        </div>
+                        <div class="mt-2">
+                            Todos los sorteos se transmiten en vivo a través del <strong>Canal 1.</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="outfit-medium mb-2 mt-2 mt-md-0 mt-lg-0"><strong class="yellow-color">Contacto y PQRSD</strong></div>
+                        <div class="outfit-medium mb-3 mt-2 mt-md-0 mt-lg-0">
+                            Si requiere contactarse con nosotros o radicar una PQRSD verbal o escrita, por favor use alguno de los siguientes canales físicos o virtuales.
+                        </div>
+                        <div>
+                            Centro Empresarial Arrecife<br />Ac. 26 # 69D-91<br />Piso 3 Oficina 303<br />Bogotá, Colombia.
+                        </div>
+        
+                        <div class="mt-3">
+                            <div>Línea Nacional: 01 8000 416 822</div>
+                            <div>Correo electrónico</div>
+                            <div><a href="mailto:servicioalcliente@operadorjuegos.com.co">servicioalcliente@operadorjuegos.com.co</a></div>
+                        </div>
+        
+                        <div class="mt-3">
+                            <a target="_blank" href="https://www.operadorjuegos.com.co/index.php/baloto">operadorjuegos.com.co/baloto</a>
+                        </div>
+                        <div class="mt-4" id="socialFooter">
+                            <a aria-label="Enlace para el instagram de Baloto" href="https://www.instagram.com/baloto_colombia/?hl=es" target="_blank" class="me-2"><img alt="Baloto Instagram" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_01.webp" /></a>
+                            <a aria-label="Enlace para el facebook de Baloto" href="https://es-la.facebook.com/BalotoRevancha/" target="_blank" class="me-2"><img alt="Baloto Facebook" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_03.webp" /></a>
+                            <a aria-label="Enlace para el twitter de Baloto" href="https://twitter.com/Baloto_Colombia" target="_blank" class="me-2"><img alt="Baloto Twitter" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_05.webp" /></a>
+                            <a aria-label="Enlace para el youtube de Baloto" href="https://www.youtube.com/@BalotoCo" target="_blank" class="me-2"><img alt="Baloto YouTube" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_07.webp" /></a>
+                            <a aria-label="Enlace para el threads de Baloto" href="https://www.threads.net/@baloto_colombia" target="_blank" class="me-2"><img alt="Baloto Threads" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_09.webp" /></a>
+                            <a aria-label="Enlace para el miloto de Baloto" href="https://www.tiktok.com/@baloto_colombia" target="_blank" class="me-2"><img alt="Baloto Tiktok" class="img-fluid" width="30px" height="30px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/social_11.webp" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" id="payments">
+            <hr />
+            <img alt="Metodos de pago" class="img-fluid" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/payments.webp" />
+            <hr />
+        </div>
+    </div>
+
+</div>
+<div class="row m-0 pt-3 cursor-pointer" id="legalFooterContainer" onclick="window.open('https://www.coljuegos.gov.co', '_blank')" >
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <div class="row m-0">
+            <div class="col-md-2 text-center col-2">
+                <img width="50px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/1850.webp" />
+            </div>
+            <div class="col-md-8 nunito-medium text-center col-5" id="legalFooter">
+                <div>
+                    DEFINE TUS LÍMITES, JUEGA LEGAL Y CON RESPONSABILIDAD.
+                </div>
+                <div>
+                    PROHIBIDA LA VENTA A MENORES DE EDAD.
+                </div>
+            </div>
+            <div class="col-md-2 text-center col-5">
+                <img width="123px" src="https://baloto-dev-assets.s3.amazonaws.com/static/img/new_home/autoriza123.webp" />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    <script type="text/javascript" src="https://baloto-dev-assets.s3.amazonaws.com/static/js/jquery-3.5.1.min.js"></script>
+    <script src="https://baloto-dev-assets.s3.amazonaws.com/static/js/jquery.plugin.min.js" integrity="sha384-xV4HSw2nwSrwP1JVH0mPKauprkKtiCVyp2jtU3tHFzUTxzHjhsCPJSmNdhzeJQsr" crossorigin="anonymous"></script>
+    <script src="https://baloto-dev-assets.s3.amazonaws.com/static/js/jquery.countdown.min.js"></script>
+    <script src="https://baloto-dev-assets.s3.amazonaws.com/static/js/popper.min.js" integrity="sha384-RIjNjeTX6BWX1BWbhxBdcCfTJ2FpXSjEfPHlebEy/XMOZKNqjZW+4eW+zAaBQDU+" crossorigin="anonymous"></script>
+    <script src="https://baloto-dev-assets.s3.amazonaws.com/static/js/bootstrap.min.js"></script>
+    <script nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        $(window).on('load', function() {
+            $( "#header-baloto" ).animate({
+                opacity: 1
+              }, 500, function() {
+            });
+        });
+    </script>
+    <script defer nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        let newYear = new Date('2026/11/05 22:00:00'); 
+        $('#defaultCountdown').countdown({
+            labels: ['Años', 'Meses', 'Semanas', 'Días', 'Horas', 'Min', 'Seg'],
+            labels1: ['Año', 'Mes', 'Semana', 'Día', 'Hora', 'Min', 'Seg'],
+            until: newYear,
+            compact: true,
+            format: 'DHMS'
+        }); 
+    </script>
+    <script defer nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+
+        function showDocs() {
+            $('#docs').slideToggle();
+        }
+        function showProcs() {
+            $('#procs').slideToggle();
+        }
+
+    </script>
+    <script defer nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        $( document ).ready(function() {
+            $('.fixed-bottom').fadeIn();
+            $('#containerLuck').fadeIn();
+            
+            // Event delegation for footer actions
+            $(document).on('click', '.show-docs-btn', function() {
+                showDocs();
+            });
+
+            $(document).on('click', '.show-procs-btn', function() {
+                showProcs();
+            });
+
+            $(document).on('click', '#legalFooterContainer', function() {
+                const url = $(this).data('url');
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            });
+        });
+    </script>
+
+    <script nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+    document.getElementById('CL_AP_MI_MA24_LANDING').addEventListener('click', function() {      
+      gtag('event', 'clic', {
+        'event_category': 'button',
+        'event_label': 'landing',
+        'event_action': 'click',
+      });
+    });
+
+    document.getElementById('CL_AP_MI_MA24_REGISTER').addEventListener('click', function() {      
+      gtag('event', 'clic', {
+        'event_category': 'button',
+        'event_label': 'register',
+        'event_action': 'click',
+      });
+    });
+    </script>
+
+    
+<script type="text/javascript" src="https://baloto-dev-assets.s3.amazonaws.com/static/js/bootstrap-datepicker.min.js" integrity="sha384-duAtk5RV7s42V6Zuw+tRBFcqD8RjRKw6RFnxmxIj1lUGAQJyum/vtcUQX8lqKQjp" crossorigin="anonymous"></script>
+
+
+    <script defer nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        !function(a){a.fn.datepicker.dates.es={days:["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"],daysShort:["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"],daysMin:["Do","Lu","Ma","Mi","Ju","Vi","Sa"],months:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],monthsShort:["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"],today:"Hoy",monthsTitle:"Meses",clear:"Borrar",weekStart:1,format:"dd/mm/yyyy"}}(jQuery);
+
+        $('.date-picker').datepicker({
+            startDate: '2021-05-01',
+            endDate: new Date(),
+            format: 'yyyy-mm-dd',
+            language: "es",
+            daysOfWeekDisabled: [0,3,6,7]
+        });
+    </script>
+
+    <script defer nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        function loadVideo(sku, title) {
+            $('#container-video').html('<iframe referrerpolicy="strict-origin-when-cross-origin" width="100%" height="315" src="https://www.youtube.com/embed/'+sku+'?controls=1&listType=playlist&rel=0" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+            $('#container-title-video').html(title);
+            const videoAnchor = $("#lastVideoSeparator");
+            $('html,body').animate({scrollTop: videoAnchor.offset().top},'slow');
+        }
+    </script>
+
+    <script nonce="k8m3n7q2w5e9r4t6y1u8i0p3">
+        $(window).on('load', function() {
+            $('#kvModal').modal('show');
+        });
+    </script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
