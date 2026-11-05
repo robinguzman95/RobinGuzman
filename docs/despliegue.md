@@ -14,11 +14,8 @@ Solo tú puedes crear las cuentas e ingresar credenciales. Estos pasos toman uno
 
 ## 0. Antes de empezar
 
-1. Fusiona las fases en `main` (son lineales, no hay conflictos):
-   ```bash
-   git switch main
-   git merge --ff-only fase-4-web
-   ```
+1. `main` ya contiene las cuatro fases. Si haces cambios en otra rama, fusiónalos antes de publicar
+   (`git switch main` y `git merge --ff-only <rama>`).
 2. Genera el token de ingesta (guárdalo en tu gestor de contraseñas; no lo subas al repo):
    ```bash
    python -c "import secrets; print(secrets.token_urlsafe(32))"
