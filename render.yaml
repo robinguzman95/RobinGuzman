@@ -1,0 +1,23 @@
+# Blueprint de Render: API (Docker) + PostgreSQL. Ver docs/despliegue.md.
+services:
+  - type: web
+    name: lotolab-api
+    runtime: docker
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: LOTOLAB_DATABASE_URL
+        fromDatabase:
+          name: lotolab-db
+          property: connectionString
+      - key: LOTOLAB_INGEST_TOKEN
+        sync: false # se pega a mano en el panel de Render
+      - key: LOTOLAB_CORS_ORIGINS
+        sync: false # URL del frontend en Vercel, p. ej. https://lotolab.vercel.app
+
+databases:
+  - name: lotolab-db
+    plan: free
+    postgresMajorVersion: "16"

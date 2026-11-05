@@ -30,8 +30,12 @@ def test_create_and_fetch_backtest(client):
 def test_backtest_errors(client):
     assert client.post("/backtest", json={"game": "miloto", "strategy": "martingala"}).status_code == 404
     assert client.post("/backtest", json={"game": "chance", "strategy": "hot"}).status_code == 404
-    too_big = client.post("/backtest", json={"game": "miloto", "strategy": "hot", "window": 500})
+    # 160 sorteos no alcanzan para una ventana de 200: error claro del motor.
+    too_big = client.post("/backtest", json={"game": "miloto", "strategy": "hot", "window": 200})
     assert too_big.status_code == 422 and "no hay sorteos" in too_big.json()["detail"]
+    # Ventanas y semillas fuera del laboratorio se rechazan (la API es pública).
+    assert client.post("/backtest", json={"game": "miloto", "strategy": "hot", "window": 77}).status_code == 422
+    assert client.post("/backtest", json={"game": "miloto", "strategy": "hot", "seed": 999}).status_code == 422
     assert client.get("/backtest/999").status_code == 404
 
 

@@ -31,6 +31,7 @@ class LookAheadError(RuntimeError):
 @dataclass(frozen=True)
 class DrawHit:
     draw_number: int
+    draw_date: date
     hits: int
     extra_hit: bool | None
 
@@ -50,6 +51,23 @@ class BacktestOutcome:
     baseline: Baseline
     p_value: float
     per_draw: list[DrawHit]
+
+    def series(self) -> list[dict]:
+        """Promedio acumulado de la estrategia frente a la banda p5–p95 del azar."""
+        out, total, j = [], 0, 0
+        cps = set(self.baseline.checkpoints)
+        for i, d in enumerate(self.per_draw):
+            total += d.hits
+            if i in cps:
+                out.append({
+                    "draw_number": d.draw_number,
+                    "draw_date": d.draw_date.isoformat(),
+                    "strategy": total / (i + 1),
+                    "p5": self.baseline.band_p5[j],
+                    "p95": self.baseline.band_p95[j],
+                })
+                j += 1
+        return out
 
     @property
     def above_p95(self) -> bool:
@@ -104,7 +122,7 @@ def run_backtest(
                              f"{target.draw_number}: {'; '.join(problems)}")
         hits = len(set(ticket.balls()) & set(target.ticket.balls()))
         extra_hit = (ticket.extra == target.extra) if game.extra_max else None
-        per_draw.append(DrawHit(target.draw_number, hits, extra_hit))
+        per_draw.append(DrawHit(target.draw_number, target.draw_date, hits, extra_hit))
 
     n = len(per_draw)
     avg = sum(d.hits for d in per_draw) / n

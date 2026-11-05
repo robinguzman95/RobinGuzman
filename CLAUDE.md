@@ -53,10 +53,32 @@ como **advertencia**, no como error.
 - El puntaje de popularidad es heurístico y la cuadrícula del tiquete es aproximada: decirlo
   siempre que se muestre.
 
+## Web y despliegue (Fase 4)
+
+- Frontend en `frontend/`: **Next.js 16 con Cache Components** (`cacheComponents: true`). No usar
+  `export const revalidate/dynamic`: los datos de servidor se cachean con `"use cache"` +
+  `cacheLife` en `lib/data.ts`, y el contenido que depende de la API va en `<Suspense>` con
+  `await connection()` (el build no necesita la API). Leer `frontend/node_modules/next/dist/docs/`
+  antes de usar APIs de Next: difieren de versiones anteriores.
+- Tipos de la API generados: `npm run types` (OpenAPI → `lib/api-types.ts`). Regenerar tras cambiar
+  esquemas del backend.
+- Gráficas: serie única = azul `--series-1`; banda del azar = gris; mapa de calor = rampa
+  secuencial azul. Toda gráfica tiene vista de tabla. Toda pantalla con jugadas muestra la
+  probabilidad real (`OddsNotice`).
+- API pública: `POST /backtest` solo acepta ventanas 50/100/200 y semilla 0–20, y reutiliza
+  corridas idénticas (cada corrida distinta se guarda). `POST /ingest/run` exige
+  `X-Ingest-Token`.
+- Despliegue: Vercel (frontend) + Render (`render.yaml`, `backend/Dockerfile`) + cron en
+  `.github/workflows/update-draws.yml`. Guía: `docs/despliegue.md`.
+
 ## Datos
 
-- La vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`. El scraper solo
-  escribe esos CSV; nunca inserta directo en la BD.
+- En **local**, la vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`: el
+  comando `scrape` solo escribe CSV y `import` los carga.
+- En **producción** la BD es la fuente (el disco del contenedor es efímero): `jobs/update_draws.py`
+  (vía `POST /ingest/run` o el cron de GitHub Actions) valida y carga con el mismo importador, sin
+  CSV intermedio. `lotolab export-csv` respalda la BD en `data/raw/`. Al arrancar, el contenedor
+  siembra la BD desde los CSV del repo (idempotente).
 - Scraper: solo páginas públicas de `baloto.com` (robots.txt prohíbe `/api/`), con pausa entre
   peticiones y User-Agent identificable. Los términos de baloto.com reservan sus bases de datos y
   prohíben el uso **comercial** sin autorización: este proyecto es académico/portafolio. Si algún

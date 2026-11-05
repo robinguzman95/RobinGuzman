@@ -13,7 +13,8 @@ Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
   exactas, popularidad; `/games/{code}/stats` y `/draws`. Ver [conteo manual](docs/conteo_manual_fase2.md)
 - [x] Fase 3 — Backtest: 5 estrategias × 3 ventanas × 4 juegos sobre el histórico completo
   (Baloto desde 2021). **Ninguna le gana al azar** → [resultados](docs/resultados_backtest.md)
-- [ ] Fase 4 — Web y despliegue
+- [x] Fase 4 — Web (inicio, estadísticas, backtest, generador), tarea post-sorteo, Docker,
+  Render + Vercel + GitHub Actions. Falta publicarlo con tus cuentas: [guía](docs/despliegue.md)
 
 ## Empezar
 
@@ -28,6 +29,14 @@ uv run lotolab scrape            # últimos ~400 días → data/raw/*.csv
 uv run lotolab import
 uv run lotolab validate
 uv run uvicorn app.main:app --reload   # http://localhost:8000/docs
+```
+
+Frontend (Node 20+), con la API corriendo:
+
+```bash
+cd frontend
+npm install
+npm run dev                            # http://localhost:3000
 ```
 
 ## Datos

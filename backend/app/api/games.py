@@ -117,6 +117,8 @@ def compute_stats(game: type[Game], records, window: fq.Window) -> StatsOut:
         cold=[_stat_out(s) for s in cold],
         overdue=[_stat_out(s) for s in fq.overdue(recs, game)],
         top_pairs=_combos(recs, 2),
+        pair_counts=[(fq.ball_label(a), fq.ball_label(b), n) for (a, b), n in sorted(
+            fq.combo_frequency(recs, 2).items(), key=lambda kv: [(x[0], str(x[1])) for x in kv[0]])],
         top_triples=_combos(recs, 3),
         shape=ShapeOut(**{k: v for k, v in asdict(shape).items() if k != "sums"}) if shape else None,
         uniformity=[ChiSquareOut(**{k: v for k, v in asdict(t).items() if k != "n_draws"})

@@ -153,8 +153,10 @@ class Scraper:
         delay_seconds: float = 2.0,
         user_agent: str = "LotoLab/0.1",
         client: httpx.Client | None = None,
+        use_cache: bool = True,
     ) -> None:
         self.cache_dir = cache_dir
+        self.use_cache = use_cache  # la tarea post-sorteo lo apaga: necesita la página recién publicada
         self.delay = delay_seconds
         self.client = client or httpx.Client(
             headers={"User-Agent": user_agent}, timeout=30, follow_redirects=True
@@ -165,7 +167,7 @@ class Scraper:
         cache = self.cache_dir / family / f"page-{page:04d}.html"
         # La página 1 cambia tras cada sorteo; las demás también se desplazan, así que la
         # caché solo se usa dentro de un mismo día.
-        if cache.exists() and date.fromtimestamp(cache.stat().st_mtime) == date.today():
+        if self.use_cache and cache.exists() and date.fromtimestamp(cache.stat().st_mtime) == date.today():
             return cache.read_text(encoding="utf-8")
         wait = self.delay - (time.monotonic() - self._last_request)
         if wait > 0:

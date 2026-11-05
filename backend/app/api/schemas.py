@@ -100,6 +100,8 @@ class StatsOut(BaseModel):
     cold: list[BallStatOut]
     overdue: list[BallStatOut]
     top_pairs: list[ComboOut]
+    # Todas las parejas que salieron juntas al menos una vez: [balota_a, balota_b, veces].
+    pair_counts: list[tuple[str, str, int]]
     top_triples: list[ComboOut]
     shape: ShapeOut | None
     uniformity: list[ChiSquareOut]

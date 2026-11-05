@@ -95,6 +95,18 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return status
 
 
+def cmd_export_csv(args: argparse.Namespace) -> int:
+    """BD -> data/raw/*.csv (fusiona; nunca pisa un resultado distinto)."""
+    from app.games import GAMES
+    from app.ingest.importer_csv import write_csv
+
+    settings = get_settings()
+    for code, recs in _records_by_game(args.game or list(GAMES)).items():
+        added = write_csv(settings.raw_data_dir / f"{code}.csv", code, recs)
+        print(f"{code}: {len(recs)} sorteos en BD, {added} nuevos en el CSV")
+    return 0
+
+
 def _records_by_game(codes: list[str]) -> dict:
     from app.db import get_sessionmaker
     from app.ingest.records import records_from_db
@@ -119,7 +131,9 @@ def cmd_backtest(args: argparse.Namespace) -> int:
 
 
 def cmd_backtest_all(args: argparse.Namespace) -> int:
-    from app.backtest.report import render_markdown, run_all
+    import json
+
+    from app.backtest.report import render_markdown, run_all, to_summary
     from app.config import REPO_ROOT
     from app.games import GAMES
 
@@ -129,6 +143,9 @@ def cmd_backtest_all(args: argparse.Namespace) -> int:
     out = Path(args.out) if args.out else REPO_ROOT / "docs" / "resultados_backtest.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(md, encoding="utf-8")
+    summary_path = get_settings().backtest_summary_path
+    summary_path.write_text(json.dumps(to_summary(rows, alpha_b, notes), ensure_ascii=False, indent=1),
+                            encoding="utf-8")
     winners = sum(r.significant_bonferroni for r in rows)
     print(f"{len(rows)} combinaciones, α corregido {alpha_b:.5f}, {winners} superan al azar → {out}")
     return 0
@@ -156,6 +173,10 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("--game", action="append", choices=list(GAMES))
     v.add_argument("--min-months", type=float, default=12.0)
     v.set_defaults(func=cmd_validate)
+
+    e = sub.add_parser("export-csv", help="respalda la BD en data/raw/*.csv")
+    e.add_argument("--game", action="append", choices=list(GAMES))
+    e.set_defaults(func=cmd_export_csv)
 
     from app.backtest.engine import PRIMARY_WINDOW
     from app.backtest.strategies import STRATEGIES

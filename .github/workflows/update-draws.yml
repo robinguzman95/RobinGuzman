@@ -1,0 +1,30 @@
+# Actualización automática tras cada sorteo (condición de salida de la Fase 4).
+# Los sorteos terminan ~23:00–23:40 hora de Bogotá (UTC-5).
+name: Actualizar sorteos
+
+on:
+  schedule:
+    - cron: "30 5 * * *"   # 00:30 Bogotá
+    - cron: "0 13 * * *"   # 08:00 Bogotá (reintento por si baloto.com publicó tarde)
+  workflow_dispatch:
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      API_URL: ${{ vars.API_URL }}
+      TOKEN: ${{ secrets.INGEST_TOKEN }}
+    steps:
+      - name: Despertar la API (Render gratis se duerme)
+        run: |
+          for i in $(seq 1 10); do
+            curl -fsS --max-time 60 "$API_URL/health" && exit 0
+            echo "intento $i: la API aún no responde"; sleep 20
+          done
+          exit 1
+      - name: Ingesta
+        run: |
+          curl -fsS --retry 3 --retry-delay 30 --max-time 600 \
+            -X POST -H "X-Ingest-Token: $TOKEN" "$API_URL/ingest/run" | tee resultado.json
+          jq -e '.ok == true' resultado.json

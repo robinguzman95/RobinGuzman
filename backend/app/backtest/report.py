@@ -44,6 +44,29 @@ def run_all(
     return rows, alpha_b, notes
 
 
+def to_summary(rows: list[Row], alpha_b: float, notes: list[str], generated: date | None = None) -> dict:
+    """Versión JSON del reporte, para la pantalla /backtest."""
+    return {
+        "generated": (generated or date.today()).isoformat(),
+        "primary_window": PRIMARY_WINDOW,
+        "alpha": ALPHA,
+        "alpha_bonferroni": alpha_b,
+        "combinations": len(rows),
+        "notes": notes,
+        "rows": [
+            {
+                "game": r.outcome.game, "strategy": r.outcome.strategy, "window": r.outcome.window,
+                "primary": r.primary, "n_draws": r.outcome.n_draws,
+                "date_from": r.outcome.date_from.isoformat(), "date_to": r.outcome.date_to.isoformat(),
+                "avg_hits": r.outcome.avg_hits, "baseline_p5": r.outcome.baseline.p5,
+                "baseline_p95": r.outcome.baseline.p95, "p_value": r.outcome.p_value,
+                "above_p95": r.outcome.above_p95, "significant_bonferroni": r.significant_bonferroni,
+            }
+            for r in rows
+        ],
+    }
+
+
 def _fmt(x: float, d: int = 3) -> str:
     return f"{x:.{d}f}".replace(".", ",")
 
