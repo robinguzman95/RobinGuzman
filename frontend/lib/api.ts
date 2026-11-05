@@ -171,7 +171,7 @@ export const api = {
   allExpectedValue: () => request<{ generated: string; tax: EVTax; games: Record<string, EVGame> }>("/expected-value"),
   backtest: (body: { game: string; strategy: string; window: number }) =>
     request<BacktestOut>("/backtest", { method: "POST", body: JSON.stringify(body) }),
-  generate: (body: { game: string; n: number }) =>
+  generate: (body: { game: string; n: number; mode: "historico" | "anti_popular"; window: "12m" | "100" | "all" }) =>
     request<GenerateOut>("/generate", { method: "POST", body: JSON.stringify(body) }),
 };
 

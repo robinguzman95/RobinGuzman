@@ -149,6 +149,54 @@ def build_picks(history: list[DrawRecord], game: type[Game], window: fq.Window =
     return picks
 
 
+def historical_plays(history: list[DrawRecord], game: type[Game], n: int, rng: random.Random,
+                     window: fq.Window = "12m", pool_size: int = 15, candidates: int = 60) -> list[Pick]:
+    """n jugadas distintas armadas con las balotas que más salieron en la ventana.
+
+    1. Se toman las `pool_size` balotas más frecuentes.
+    2. Se listan sus combinaciones con forma típica y se ordenan por total de salidas.
+    3. Entre las `candidates` mejores se eligen n al azar (ponderado por salidas), exigiendo que
+       dos jugadas compartan como mucho K−2 balotas, para que no sean casi iguales.
+    4. La superbalota sale de las 4 más frecuentes, ponderada por sus salidas.
+    """
+    hist = sorted(history, key=lambda r: r.draw_number)
+    win = fq.apply_window(hist, window)
+    k = game.main_count
+    freq = fq.ball_frequency(win, game)
+    pool = sorted(freq, key=lambda b: (-freq[b], _key(b)))[:pool_size]
+    shape = typical_shape(hist, game)
+    combos = [c for c in combinations(pool, k) if shape.fits([b[0] for b in c], game)] or list(combinations(pool, k))
+    combos.sort(key=lambda c: (-sum(freq[b] for b in c), [_key(b) for b in c]))
+    top = combos[:candidates]
+
+    extras: list[int] = []
+    weights_e: list[int] = []
+    if game.extra_max:
+        ef = fq.extra_frequency(win, game)
+        extras = sorted(ef, key=lambda e: (-ef[e], e))[:4]
+        weights_e = [ef[e] for e in extras]
+
+    chosen: list[tuple[Ball, ...]] = []
+    remaining = list(top)
+    while remaining and len(chosen) < n:
+        weights = [sum(freq[b] for b in c) for c in remaining]
+        c = rng.choices(remaining, weights)[0]
+        remaining.remove(c)
+        if all(len(set(c) & set(o)) <= k - 2 for o in chosen):
+            chosen.append(c)
+    if len(chosen) < n:  # sin suficientes jugadas variadas: completa con las mejores restantes
+        for c in top:
+            if len(chosen) >= n:
+                break
+            if c not in chosen:
+                chosen.append(c)
+    out = []
+    for c in chosen:
+        extra = rng.choices(extras, weights_e)[0] if extras else None
+        out.append(Pick("historico", "Basada en lo que más ha salido", tuple(sorted(c, key=_key)), extra, ""))
+    return out
+
+
 # --- evaluación con premios reales -------------------------------------------------
 def category_for(game: type[Game], ticket: Ticket, draw: DrawRecord) -> list[str]:
     """Categorías de premio que gana `ticket` en `draw` (puede ser más de una en ColorLoto)."""

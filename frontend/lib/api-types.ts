@@ -291,6 +291,13 @@ export interface components {
             /** Disclaimer */
             disclaimer: string;
         };
+        /** BallCount */
+        BallCount: {
+            /** Label */
+            label: string;
+            /** Count */
+            count: number;
+        };
         /** BallOut */
         BallOut: {
             /** Number */
@@ -394,6 +401,18 @@ export interface components {
              */
             n: number;
             /**
+             * Mode
+             * @default historico
+             * @enum {string}
+             */
+            mode: "historico" | "anti_popular";
+            /**
+             * Window
+             * @default 12m
+             * @enum {string}
+             */
+            window: "12m" | "100" | "all";
+            /**
              * Seed
              * @description opcional, para reproducir las mismas jugadas
              */
@@ -403,6 +422,8 @@ export interface components {
         GenerateOut: {
             /** Game */
             game: string;
+            /** Mode */
+            mode: string;
             /** Seed */
             seed: number;
             /** Plays */
@@ -425,6 +446,34 @@ export interface components {
             /** Jackpot Probability */
             jackpot_probability: number;
         };
+        /** PairCount */
+        PairCount: {
+            /** Pair */
+            pair: string;
+            /** Count */
+            count: number;
+        };
+        /** PlayHistory */
+        PlayHistory: {
+            /** Draws */
+            draws: number;
+            /** Cost */
+            cost: number;
+            /** Won */
+            won: number;
+            /** Ret */
+            ret: number;
+            /** Prize Draws */
+            prize_draws: number;
+            /** Best Hits */
+            best_hits: number;
+            /** Hits 3Plus */
+            hits_3plus: number;
+            /** Date From */
+            date_from: string | null;
+            /** Date To */
+            date_to: string | null;
+        };
         /** PlayOut */
         PlayOut: {
             /** Balls */
@@ -439,6 +488,33 @@ export interface components {
             popularity_level: string;
             /** Popularity Reasons */
             popularity_reasons: string[];
+            stats?: components["schemas"]["PlayStats"] | null;
+        };
+        /** PlayStats */
+        PlayStats: {
+            /** Window Draws */
+            window_draws: number;
+            /** Expected Count */
+            expected_count: number;
+            /** Counts */
+            counts: components["schemas"]["BallCount"][];
+            /** Total Count */
+            total_count: number;
+            /** Sum */
+            sum: number;
+            /** Evens */
+            evens: number;
+            /** Highs */
+            highs: number;
+            /** Shape Ok */
+            shape_ok: boolean;
+            /** Frequent Pairs */
+            frequent_pairs: components["schemas"]["PairCount"][];
+            /** Extra Count */
+            extra_count: number | null;
+            /** Extra Expected */
+            extra_expected: number | null;
+            history: components["schemas"]["PlayHistory"] | null;
         };
         /** RunsOut */
         RunsOut: {

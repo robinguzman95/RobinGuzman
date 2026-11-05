@@ -96,7 +96,8 @@ def test_generate(code):
 
     client = make_client(simulate_draws(code, 40, seed=5))
     try:
-        body = client.post("/generate", json={"game": code, "n": 5, "seed": 123}).json()
+        req = {"game": code, "n": 5, "seed": 123, "mode": "anti_popular"}
+        body = client.post("/generate", json=req).json()
         game = get_game(code)
         assert len(body["plays"]) == 5
         assert body["odds"]["jackpot_odds"] == game.odds_text()
@@ -110,7 +111,42 @@ def test_generate(code):
             keys.add((nums, cols))
         assert len(keys) == 5  # sin jugadas repetidas
         # Misma semilla, mismas jugadas.
-        assert client.post("/generate", json={"game": code, "n": 5, "seed": 123}).json() == body
+        assert client.post("/generate", json=req).json() == body
+    finally:
+        app.dependency_overrides.clear()
+
+
+@pytest.mark.parametrize("code", ["baloto", "miloto", "colorloto"])
+def test_generate_historical(code):
+    """Modo por defecto: jugadas con las balotas más frecuentes y sus estadísticas."""
+    from app.analysis import frequency as fq
+    from app.games import Ticket, get_game
+
+    draws = simulate_draws(code, 200, seed=9)
+    client = make_client(draws)
+    try:
+        body = client.post("/generate", json={"game": code, "n": 5, "seed": 1}).json()
+        game = get_game(code)
+        assert body["mode"] == "historico" and len(body["plays"]) == 5
+        win = fq.apply_window(draws, "12m")
+        freq = fq.ball_frequency(win, game)
+        top15 = {fq.ball_label(b) for b in sorted(freq, key=lambda b: (-freq[b], b[0], str(b[1])))[:15]}
+        keys = set()
+        for p in body["plays"]:
+            nums = tuple(b["number"] for b in p["balls"])
+            cols = tuple(b["color"] for b in p["balls"]) if game.colors else None
+            assert game.validate(Ticket(nums, cols, p["extra"])) == []
+            s = p["stats"]
+            assert {c["label"] for c in s["counts"]} <= top15  # solo balotas calientes
+            assert s["total_count"] == sum(c["count"] for c in s["counts"])
+            assert s["window_draws"] == len(win)
+            keys.add(nums + (cols or ()))
+        assert len(keys) == 5
+        # Jugadas variadas: dos jugadas comparten como mucho K-2 balotas.
+        sets = [set(zip(*(lambda p: ([b["number"] for b in p["balls"]], [b["color"] for b in p["balls"]]))(p)))
+                for p in body["plays"]]
+        assert all(len(a & b) <= game.main_count - 2 for i, a in enumerate(sets) for b in sets[i + 1:])
+        assert client.post("/generate", json={"game": code, "n": 5, "seed": 1}).json() == body
     finally:
         app.dependency_overrides.clear()
 
