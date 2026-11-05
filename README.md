@@ -13,6 +13,9 @@ Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
   exactas, popularidad; `/games/{code}/stats` y `/draws`. Ver [conteo manual](docs/conteo_manual_fase2.md)
 - [x] Fase 3 — Backtest: 5 estrategias × 3 ventanas × 4 juegos sobre el histórico completo
   (Baloto desde 2021). **Ninguna le gana al azar** → [resultados](docs/resultados_backtest.md)
+- [x] Fase 5 — Valor esperado real de cada tiquete (tablas de premios oficiales), ventas
+  estimadas, evidencia de que la gente juega fechas y análisis de potencia →
+  [resultados](docs/valor_esperado.md)
 - [x] Fase 4 — Web (inicio, estadísticas, backtest, generador), tarea post-sorteo, Docker,
   Render + Vercel + GitHub Actions. Falta publicarlo con tus cuentas: [guía](docs/despliegue.md)
 

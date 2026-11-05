@@ -143,6 +143,40 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/expected-value": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** All Expected Value */
+        get: operations["all_expected_value_expected_value_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/games/{code}/expected-value": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Game Expected Value */
+        get: operations["game_expected_value_games__code__expected_value_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -780,6 +814,66 @@ export interface operations {
                 "x-ingest-token"?: string | null;
             };
             path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    all_expected_value_expected_value_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+        };
+    };
+    game_expected_value_games__code__expected_value_get: {
+        parameters: {
+            query?: {
+                /** @description acumulado en pesos para calcular el VE */
+                jackpot?: number | null;
+                /** @description 1 = jugada promedio; 0,5 = la mitad de popular */
+                popularity?: number;
+            };
+            header?: never;
+            path: {
+                code: string;
+            };
             cookie?: never;
         };
         requestBody?: never;

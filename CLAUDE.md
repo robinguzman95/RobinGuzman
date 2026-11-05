@@ -71,6 +71,20 @@ como **advertencia**, no como error.
 - Despliegue: Vercel (frontend) + Render (`render.yaml`, `backend/Dockerfile`) + cron en
   `.github/workflows/update-draws.yml`. Guía: `docs/despliegue.md`.
 
+## Valor esperado y potencia (Fase 5)
+
+- Tablas de premios: `lotolab scrape-prizes` (páginas de detalle, último año, caché permanente) →
+  `data/raw/{juego}_premios.csv`. Luego `lotolab expected-value` → `data/expected_value.json`, que
+  sirve la API (`/expected-value`, `/games/{code}/expected-value?jackpot=&popularity=`).
+- Probabilidades por categoría exactas por combinatoria (`analysis/expected.py`); ColorLoto "6N" y
+  "6C" por Monte Carlo con semilla fija. En Baloto/Revancha la fila "0 + SB" agrupa 0 y 1 aciertos
+  con superbalota (ambos devuelven el valor de la jugada).
+- Ventas estimadas = ganadores de una categoría "contador" / su probabilidad. VE del premio mayor
+  con reparto Poisson: E[1/(1+K)] = (1 − e^{−λ})/λ. Retención 20 % > 48 UVT (2026): revisar cada año.
+- Potencia (`analysis/power.py`): chi-cuadrado no central para el sesgo mínimo detectable y
+  Δ = (z_{1−α/m} + z_{potencia})·σ/√n para el backtest; ambas validadas por simulación en tests.
+- Precios por jugada en `PRICES`: actualizarlos si baloto.com los cambia.
+
 ## Datos
 
 - En **local**, la vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`: el

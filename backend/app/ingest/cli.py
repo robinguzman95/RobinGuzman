@@ -95,6 +95,62 @@ def cmd_validate(args: argparse.Namespace) -> int:
     return status
 
 
+def cmd_scrape_prizes(args: argparse.Namespace) -> int:
+    """Tablas de premios de los sorteos del último año -> data/raw/{juego}_premios.csv."""
+    from app.games import GAMES
+    from app.ingest.prizes import PrizeScraper, read_prizes_csv, write_prizes_csv
+
+    settings = get_settings()
+    scraper = PrizeScraper(settings.cache_dir, settings.scraper_delay_seconds, settings.scraper_user_agent)
+    codes = args.game or list(GAMES)
+    for code, recs in _records_by_game(codes).items():
+        if not recs:
+            continue
+        last = max(r.draw_date for r in recs)
+        since = date.fromisoformat(args.since) if args.since else last - timedelta(days=365)
+        path = settings.raw_data_dir / f"{code}_premios.csv"
+        have = {r.draw_number for r in read_prizes_csv(path, code)}
+        todo = [r.draw_number for r in sorted(recs, key=lambda r: r.draw_number)
+                if r.draw_date >= since and r.draw_number not in have]
+        rows, missing = scraper.scrape(code, todo)
+        added = write_prizes_csv(path, code, rows)
+        print(f"{code}: {len(todo)} sorteos pedidos, {added} filas nuevas, {len(missing)} sin detalle", flush=True)
+        for m in missing:
+            print("  sin detalle:", m, flush=True)
+    return 0
+
+
+def cmd_expected_value(args: argparse.Namespace) -> int:
+    """data/raw/*_premios.csv + histórico -> data/expected_value.json (lo sirve la API)."""
+    import json
+
+    from app.analysis.ev_report import build_summary, game_summary
+    from app.games import GAMES
+    from app.ingest.prizes import read_prizes_csv
+
+    settings = get_settings()
+    bt_draws: dict[str, int] = {}
+    if settings.backtest_summary_path.exists():
+        summ = json.loads(settings.backtest_summary_path.read_text(encoding="utf-8"))
+        bt_draws = {r["game"]: r["n_draws"] for r in summ["rows"] if r["primary"]}
+    per_game = {}
+    for code, recs in _records_by_game(list(GAMES)).items():
+        prizes = read_prizes_csv(settings.raw_data_dir / f"{code}_premios.csv", code)
+        if not prizes:
+            print(f"{code}: sin tablas de premios; corre `lotolab scrape-prizes`")
+            continue
+        s = game_summary(code, prizes, recs, bt_draws.get(code))
+        per_game[code] = s
+        be = s["break_even_jackpot"]
+        print(f"{code}: {s['n_draws']} sorteos · VE sin premio mayor ${s['non_jackpot_ev']:,.0f} "
+              f"({s['non_jackpot_return']:.0%}) · con acumulado actual {s['return_current']:.0%} · "
+              f"equilibrio {'nunca' if be is None else f'${be / 1e9:,.1f} mil millones'}")
+    out = settings.expected_value_path
+    out.write_text(json.dumps(build_summary(per_game), ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"→ {out}")
+    return 0
+
+
 def cmd_export_csv(args: argparse.Namespace) -> int:
     """BD -> data/raw/*.csv (fusiona; nunca pisa un resultado distinto)."""
     from app.games import GAMES
@@ -173,6 +229,14 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("--game", action="append", choices=list(GAMES))
     v.add_argument("--min-months", type=float, default=12.0)
     v.set_defaults(func=cmd_validate)
+
+    sp = sub.add_parser("scrape-prizes", help="tablas de premios (último año) → data/raw/{juego}_premios.csv")
+    sp.add_argument("--game", action="append", choices=list(GAMES))
+    sp.add_argument("--since", help="fecha ISO; por defecto, un año antes del último sorteo")
+    sp.set_defaults(func=cmd_scrape_prizes)
+
+    ev = sub.add_parser("expected-value", help="valor esperado y potencia → data/expected_value.json")
+    ev.set_defaults(func=cmd_expected_value)
 
     e = sub.add_parser("export-csv", help="respalda la BD en data/raw/*.csv")
     e.add_argument("--game", action="append", choices=list(GAMES))

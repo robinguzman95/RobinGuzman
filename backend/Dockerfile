@@ -12,6 +12,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 COPY backend/ ./
 COPY data/raw/ ../data/raw/
 COPY data/backtest_summary.json ../data/backtest_summary.json
+COPY data/expected_value.json ../data/expected_value.json
 RUN uv sync --frozen --no-dev
 
 ENV PATH="/srv/backend/.venv/bin:$PATH" PORT=8000

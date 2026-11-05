@@ -17,6 +17,7 @@ class Settings(BaseSettings):
     raw_data_dir: Path = DATA_DIR / "raw"
     cache_dir: Path = DATA_DIR / "cache"
     backtest_summary_path: Path = DATA_DIR / "backtest_summary.json"
+    expected_value_path: Path = DATA_DIR / "expected_value.json"
     ingest_token: str | None = None
     scraper_delay_seconds: float = 2.0
     scraper_user_agent: str = "LotoLab/0.1 (proyecto academico, no comercial)"

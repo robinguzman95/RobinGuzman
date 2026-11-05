@@ -28,6 +28,18 @@ export async function getStats(code: string, window: string) {
   return api.stats(code, window);
 }
 
+export async function getExpectedValue(code: string) {
+  "use cache";
+  cacheLife("hours");
+  return api.expectedValue(code);
+}
+
+export async function getAllExpectedValue() {
+  "use cache";
+  cacheLife("hours");
+  return api.allExpectedValue();
+}
+
 export async function getSummary() {
   "use cache";
   cacheLife("minutes");

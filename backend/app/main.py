@@ -11,6 +11,7 @@ from app.api.backtest import router as backtest_router
 from app.api.games import router as games_router
 from app.api.generate import router as generate_router
 from app.api.ingest import router as ingest_router
+from app.api.value import router as value_router
 from app.config import get_settings
 from app.db import get_session
 
@@ -30,6 +31,7 @@ app.include_router(games_router)
 app.include_router(backtest_router)
 app.include_router(generate_router)
 app.include_router(ingest_router)
+app.include_router(value_router)
 
 
 @app.get("/health")

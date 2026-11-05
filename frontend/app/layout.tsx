@@ -13,6 +13,7 @@ const NAV = [
   { href: "/baloto", label: "Estadísticas" },
   { href: "/backtest", label: "Backtest" },
   { href: "/generador", label: "Generador" },
+  { href: "/vale-la-pena", label: "¿Vale la pena?" },
 ];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
