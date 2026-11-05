@@ -18,7 +18,7 @@ const WINDOWS = [
   { value: "100", label: "Últimos 100 sorteos" },
   { value: "all", label: "Todo el histórico" },
 ] as const;
-type Mode = "historico" | "anti_popular";
+type Mode = "historico" | "ml" | "anti_popular";
 type Window = (typeof WINDOWS)[number]["value"];
 
 const money = (x: number) => `$${num(x)}`;
@@ -101,6 +101,7 @@ export default function GeneratorPage() {
           Tipo de jugada
           <select className="field" value={mode} onChange={(e) => setMode(e.target.value as Mode)}>
             <option value="historico">Lo que más ha salido</option>
+            <option value="ml">Modelo de ML</option>
             <option value="anti_popular">Anti-populares</option>
           </select>
         </label>
@@ -154,7 +155,28 @@ export default function GeneratorPage() {
                   <span className="sr-only">{p.text}</span>
                 </div>
 
-                {s && out.mode === "historico" && (
+                {out.mode === "ml" && p.ml_probabilities && p.ml_base != null && (
+                  <p className="text-sm">
+                    <span className="font-semibold">Probabilidad según el modelo</span> (azar: {num(p.ml_base * 100, 1)}{" "}
+                    % cada una):{" "}
+                    {p.balls
+                      .map(
+                        (b, j) =>
+                          `${b.color ? `${b.number}-${b.color}` : b.number} (${num(p.ml_probabilities![j] * 100, 1)} %)`,
+                      )
+                      .join(", ")}
+                    {p.extra != null && p.ml_extra_probability != null && (
+                      <>
+                        {" "}
+                        · superbalota {String(p.extra).padStart(2, "0")} ({num(p.ml_extra_probability * 100, 1)} %; azar
+                        6,3 %)
+                      </>
+                    )}
+                    .
+                  </p>
+                )}
+
+                {s && (out.mode === "historico" || out.mode === "ml") && (
                   <div className="grid gap-x-6 gap-y-2 text-sm md:grid-cols-2">
                     <p>
                       <span className="font-semibold">Veces que salió cada una</span> en {num(s.window_draws)} sorteos
@@ -203,7 +225,17 @@ export default function GeneratorPage() {
           })}
         </ol>
       )}
-      {out?.mode === "historico" && (
+      {out?.mode === "ml" && (
+        <p className="text-xs text-muted">
+          El modelo (gradient boosting) se entrena con todo el histórico cada vez que entra un sorteo nuevo. Probado sin
+          mirar al futuro, no predice mejor que el azar: los detalles están en{" "}
+          <Link className="link" href="/ml">
+            Modelo ML
+          </Link>
+          .
+        </p>
+      )}
+      {(out?.mode === "historico" || out?.mode === "ml") && (
         <p className="text-xs text-muted">
           El resultado del último año se calcula con los premios que pagó {name} en cada sorteo (antes de impuestos).
           Ese resultado mira hacia atrás: las balotas se eligieron sabiendo qué salió, por eso suele verse mejor que lo

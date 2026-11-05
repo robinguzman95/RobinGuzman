@@ -94,6 +94,16 @@ como **advertencia**, no como error.
 - Mostrar siempre las dos columnas y la probabilidad real: la página no debe sugerir que una
   jugada tiene más probabilidad de acertar.
 
+## Modelo de ML (Fase 7)
+
+- `app/ml/`: variables por balota con solo sorteos < t (`features.py`), gradient boosting de
+  scikit-learn (tipo LightGBM) y regresión logística (`model.py`). `lotolab ml` corre la evaluación
+  walk-forward (reentreno cada 25 sorteos) → `data/ml_eval.json`. `GET /games/{code}/ml` entrena en
+  vivo con todo el histórico (caché por último sorteo) y da las probabilidades del próximo sorteo.
+- Pruebas obligatorias: sin fuga (`test_features_never_use_the_predicted_draw_or_later`), aprende
+  un patrón plantado y no inventa sin patrón. El valor sin historia es K/B, nunca un promedio de p.
+- La página /ml y el modo «Modelo de ML» del generador muestran siempre que el modelo no supera al azar.
+
 ## Datos
 
 - En **local**, la vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`: el

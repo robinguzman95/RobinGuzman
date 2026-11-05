@@ -13,6 +13,7 @@ const NAV = [
   { href: "/baloto", label: "Estadísticas" },
   { href: "/backtest", label: "Backtest" },
   { href: "/analizador", label: "Analizador" },
+  { href: "/ml", label: "Modelo ML" },
   { href: "/generador", label: "Generador" },
   { href: "/vale-la-pena", label: "¿Vale la pena?" },
 ];

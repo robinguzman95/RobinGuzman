@@ -155,6 +155,52 @@ export type PicksOut = {
   };
 };
 
+// Modelo de ML (/games/{code}/ml).
+export type MLUnitEval = {
+  unit: string;
+  kind: string;
+  n_test: number;
+  k: number;
+  b: number;
+  logloss_model: number;
+  logloss_base: number;
+  brier_model: number;
+  brier_base: number;
+  skill: number;
+  delta_ci: [number, number];
+  avg_hits: number;
+  base_mean: number;
+  base_p5: number;
+  base_p95: number;
+  p_value: number;
+  calibration: { predicted: number; observed: number; n: number }[];
+};
+export type MLOut = {
+  game: string;
+  name: string;
+  model: "gb" | "logit";
+  model_name: string;
+  last_draw: number;
+  odds: S["Odds"];
+  notice: string;
+  units: Record<
+    string,
+    {
+      base: number;
+      trained_on: number;
+      probabilities: { label: string; probability: number }[];
+      top: { label: string; probability: number }[];
+    }
+  >;
+  evaluation: null | {
+    n_draws: number;
+    test_draws: number;
+    test_from: string;
+    test_to: string;
+    units: Record<string, Record<string, MLUnitEval>>;
+  };
+};
+
 export type Health = { status: string; games: Record<string, { last_draw_date: string | null; draws: number }> };
 
 // La caché de servidor vive en lib/data.ts ("use cache"); aquí solo están las llamadas.
@@ -165,14 +211,19 @@ export const api = {
   stats: (code: string, window: string) =>
     request<StatsOut>(`/games/${code}/stats?window=${encodeURIComponent(window)}`),
   summary: () => request<SummaryOut>("/backtest/summary"),
+  ml: (code: string, model: string) => request<MLOut>(`/games/${code}/ml?model=${model}`),
   picks: (code: string, window: string) =>
     request<PicksOut>(`/games/${code}/picks?window=${encodeURIComponent(window)}`),
   expectedValue: (code: string) => request<EVGame>(`/games/${code}/expected-value`),
   allExpectedValue: () => request<{ generated: string; tax: EVTax; games: Record<string, EVGame> }>("/expected-value"),
   backtest: (body: { game: string; strategy: string; window: number }) =>
     request<BacktestOut>("/backtest", { method: "POST", body: JSON.stringify(body) }),
-  generate: (body: { game: string; n: number; mode: "historico" | "anti_popular"; window: "12m" | "100" | "all" }) =>
-    request<GenerateOut>("/generate", { method: "POST", body: JSON.stringify(body) }),
+  generate: (body: {
+    game: string;
+    n: number;
+    mode: "historico" | "ml" | "anti_popular";
+    window: "12m" | "100" | "all";
+  }) => request<GenerateOut>("/generate", { method: "POST", body: JSON.stringify(body) }),
 };
 
 /** Para páginas de servidor: si la API no responde, se muestra un aviso en vez de romper. */

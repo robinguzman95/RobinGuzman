@@ -194,6 +194,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/games/{code}/ml": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Game Ml */
+        get: operations["game_ml_games__code__ml_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -405,7 +422,7 @@ export interface components {
              * @default historico
              * @enum {string}
              */
-            mode: "historico" | "anti_popular";
+            mode: "historico" | "ml" | "anti_popular";
             /**
              * Window
              * @default 12m
@@ -489,6 +506,12 @@ export interface components {
             /** Popularity Reasons */
             popularity_reasons: string[];
             stats?: components["schemas"]["PlayStats"] | null;
+            /** Ml Probabilities */
+            ml_probabilities?: number[] | null;
+            /** Ml Extra Probability */
+            ml_extra_probability?: number | null;
+            /** Ml Base */
+            ml_base?: number | null;
         };
         /** PlayStats */
         PlayStats: {
@@ -998,6 +1021,41 @@ export interface operations {
             query?: {
                 /** @description 'all', '<n>m' (meses) o número de sorteos */
                 window?: string;
+            };
+            header?: never;
+            path: {
+                code: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": {
+                        [key: string]: unknown;
+                    };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    game_ml_games__code__ml_get: {
+        parameters: {
+            query?: {
+                model?: "gb" | "logit";
             };
             header?: never;
             path: {

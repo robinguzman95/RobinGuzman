@@ -176,6 +176,31 @@ def cmd_picks(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_ml(args: argparse.Namespace) -> int:
+    """Evaluación walk-forward del modelo de ML -> data/ml_eval.json."""
+    import json
+
+    from app.games import GAMES
+    from app.ml.report import build, evaluate_game
+
+    settings = get_settings()
+    per_game = {}
+    for code, recs in _records_by_game(args.game or list(GAMES)).items():
+        if len(recs) < 150:
+            print(f"{code}: muy pocos sorteos ({len(recs)})")
+            continue
+        g = evaluate_game(code, recs)
+        per_game[code] = g
+        for unit, kinds in g["units"].items():
+            for kind, e in kinds.items():
+                print(f"{code} {unit:5} {kind:5} skill {e['skill']:+.4f} IC [{e['delta_ci'][0]:+.4f}, "
+                      f"{e['delta_ci'][1]:+.4f}] · aciertos {e['avg_hits']:.3f} (azar {e['base_p5']:.3f}–"
+                      f"{e['base_p95']:.3f}) p={e['p_value']:.3f}", flush=True)
+    settings.ml_eval_path.write_text(json.dumps(build(per_game), ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"→ {settings.ml_eval_path}")
+    return 0
+
+
 def cmd_export_csv(args: argparse.Namespace) -> int:
     """BD -> data/raw/*.csv (fusiona; nunca pisa un resultado distinto)."""
     from app.games import GAMES
@@ -265,6 +290,10 @@ def main(argv: list[str] | None = None) -> int:
 
     pk = sub.add_parser("picks", help="evalúa las jugadas del analizador → data/picks_eval.json")
     pk.set_defaults(func=cmd_picks)
+
+    ml = sub.add_parser("ml", help="evaluación walk-forward del modelo de ML → data/ml_eval.json")
+    ml.add_argument("--game", action="append", choices=list(GAMES))
+    ml.set_defaults(func=cmd_ml)
 
     e = sub.add_parser("export-csv", help="respalda la BD en data/raw/*.csv")
     e.add_argument("--game", action="append", choices=list(GAMES))
