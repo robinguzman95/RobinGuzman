@@ -85,6 +85,15 @@ como **advertencia**, no como error.
   Δ = (z_{1−α/m} + z_{potencia})·σ/√n para el backtest; ambas validadas por simulación en tests.
 - Precios por jugada en `PRICES`: actualizarlos si baloto.com los cambia.
 
+## Analizador de jugadas (Fase 6)
+
+- `analysis/picks.py`: jugadas armadas desde el histórico (calientes, consistentes en 3 ventanas,
+  forma típica, pareja más repetida, atrasados). `GET /games/{code}/picks?window=` las arma en vivo
+  desde la BD. `lotolab picks` evalúa cada criterio con los premios reales del último año →
+  `data/picks_eval.json` (fuera de muestra = armada con datos anteriores; dentro = optimista).
+- Mostrar siempre las dos columnas y la probabilidad real: la página no debe sugerir que una
+  jugada tiene más probabilidad de acertar.
+
 ## Datos
 
 - En **local**, la vía canónica de entrada a la BD es el **CSV** en `data/raw/{juego}.csv`: el

@@ -106,6 +106,55 @@ export type EVGame = {
   generated?: string;
 };
 
+// Analizador de jugadas (/games/{code}/picks).
+export type PickBall = { number: number; color: string | null };
+export type PickEval = {
+  criterion: string;
+  label: string;
+  text: string;
+  reason: string;
+  balls: PickBall[];
+  extra: number | null;
+  won: number;
+  cost: number;
+  return: number;
+  best_hits: number;
+  hits_3plus: number;
+  prize_draws: number;
+  percentile_vs_random: number;
+};
+export type PicksOut = {
+  game: string;
+  name: string;
+  window: string;
+  n_draws: number;
+  date_from: string;
+  date_to: string;
+  last_draw: number;
+  odds: S["Odds"];
+  notice: string;
+  shape: { sum_low: number; sum_high: number; evens: number[]; highs: number[]; high_from: number };
+  picks: { criterion: string; label: string; text: string; reason: string; balls: PickBall[]; extra: number | null }[];
+  evaluation: null | {
+    price: number;
+    test_from: string;
+    test_to: string;
+    test_draws: number;
+    built_until: string | null;
+    hits_threshold: number;
+    random: {
+      sims: number;
+      median_return: number;
+      p5_return: number;
+      p95_return: number;
+      mean_hits_3plus: number;
+      p95_hits_3plus: number;
+    };
+    out_of_sample: PickEval[];
+    in_sample: PickEval[];
+  };
+};
+
 export type Health = { status: string; games: Record<string, { last_draw_date: string | null; draws: number }> };
 
 // La caché de servidor vive en lib/data.ts ("use cache"); aquí solo están las llamadas.
@@ -116,6 +165,8 @@ export const api = {
   stats: (code: string, window: string) =>
     request<StatsOut>(`/games/${code}/stats?window=${encodeURIComponent(window)}`),
   summary: () => request<SummaryOut>("/backtest/summary"),
+  picks: (code: string, window: string) =>
+    request<PicksOut>(`/games/${code}/picks?window=${encodeURIComponent(window)}`),
   expectedValue: (code: string) => request<EVGame>(`/games/${code}/expected-value`),
   allExpectedValue: () => request<{ generated: string; tax: EVTax; games: Record<string, EVGame> }>("/expected-value"),
   backtest: (body: { game: string; strategy: string; window: number }) =>

@@ -12,6 +12,7 @@ const NAV = [
   { href: "/", label: "Inicio" },
   { href: "/baloto", label: "Estadísticas" },
   { href: "/backtest", label: "Backtest" },
+  { href: "/analizador", label: "Analizador" },
   { href: "/generador", label: "Generador" },
   { href: "/vale-la-pena", label: "¿Vale la pena?" },
 ];

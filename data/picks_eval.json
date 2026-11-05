@@ -1,0 +1,1810 @@
+{
+ "generated": "2026-11-05",
+ "games": {
+  "baloto": {
+   "game": "baloto",
+   "price": 6000,
+   "test_from": "2025-11-03",
+   "test_to": "2026-11-02",
+   "test_draws": 156,
+   "built_until": "2025-11-01",
+   "hits_threshold": 3,
+   "random": {
+    "sims": 3000,
+    "median_return": 0.0796741452991453,
+    "p5_return": 0.04294871794871795,
+    "p95_return": 0.16507478632478625,
+    "mean_hits_3plus": 1.1823333333333332,
+    "p95_hits_3plus": 3.0
+   },
+   "out_of_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "02 - 09 - 10 - 34 - 41 | superbalota 12",
+     "reason": "Veces que salió cada una en 127 sorteos: 2 (23), 9 (19), 10 (19), 34 (21), 41 (19).",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 41,
+       "color": null
+      }
+     ],
+     "extra": 12,
+     "won": 66000,
+     "cost": 936000,
+     "return": 0.07051282051282051,
+     "best_hits": 2,
+     "hits_3plus": 0,
+     "prize_draws": 11,
+     "hits": {
+      "0": 86,
+      "1": 65,
+      "2": 5
+     },
+     "percentile_vs_random": 0.353
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "02 - 05 - 09 - 21 - 43 | superbalota 12",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 2 (1/1/3), 5 (7/12/4), 9 (3/4/2), 21 (9/2/5), 43 (6/11/1).",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 21,
+       "color": null
+      },
+      {
+       "number": 43,
+       "color": null
+      }
+     ],
+     "extra": 12,
+     "won": 66000,
+     "cost": 936000,
+     "return": 0.07051282051282051,
+     "best_hits": 2,
+     "hits_3plus": 0,
+     "prize_draws": 11,
+     "hits": {
+      "0": 82,
+      "1": 66,
+      "2": 8
+     },
+     "percentile_vs_random": 0.353
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "02 - 09 - 10 - 34 - 41 | superbalota 12",
+     "reason": "Suma 96 (lo habitual: 93–129), 3 pares, 2 altos. Salidas: 2 (23), 9 (19), 10 (19), 34 (21), 41 (19).",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 41,
+       "color": null
+      }
+     ],
+     "extra": 12,
+     "won": 66000,
+     "cost": 936000,
+     "return": 0.07051282051282051,
+     "best_hits": 2,
+     "hits_3plus": 0,
+     "prize_draws": 11,
+     "hits": {
+      "0": 86,
+      "1": 65,
+      "2": 5
+     },
+     "percentile_vs_random": 0.353
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "02 - 09 - 34 - 36 - 41 | superbalota 12",
+     "reason": "9 y 36 salieron juntas 7 veces; se completan con 2, 34, 41.",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 36,
+       "color": null
+      },
+      {
+       "number": 41,
+       "color": null
+      }
+     ],
+     "extra": 12,
+     "won": 69550,
+     "cost": 936000,
+     "return": 0.07430555555555556,
+     "best_hits": 2,
+     "hits_3plus": 0,
+     "prize_draws": 11,
+     "hits": {
+      "0": 84,
+      "1": 67,
+      "2": 5
+     },
+     "percentile_vs_random": 0.417
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "04 - 08 - 12 - 16 - 40 | superbalota 01",
+     "reason": "Sorteos sin salir: 4 (24), 12 (20), 40 (18), 16 (18), 8 (18).",
+     "balls": [
+      {
+       "number": 4,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 16,
+       "color": null
+      },
+      {
+       "number": 40,
+       "color": null
+      }
+     ],
+     "extra": 1,
+     "won": 65900,
+     "cost": 936000,
+     "return": 0.0704059829059829,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 9,
+     "hits": {
+      "0": 73,
+      "1": 65,
+      "2": 15,
+      "3": 3
+     },
+     "percentile_vs_random": 0.3496666666666667
+    }
+   ],
+   "in_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "04 - 09 - 11 - 15 - 17 | superbalota 10",
+     "reason": "Veces que salió cada una en 156 sorteos: 4 (23), 9 (24), 11 (27), 15 (25), 17 (23).",
+     "balls": [
+      {
+       "number": 4,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 11,
+       "color": null
+      },
+      {
+       "number": 15,
+       "color": null
+      },
+      {
+       "number": 17,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 166050,
+     "cost": 936000,
+     "return": 0.17740384615384616,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 19,
+     "hits": {
+      "0": 64,
+      "1": 65,
+      "2": 24,
+      "3": 3
+     },
+     "percentile_vs_random": 0.9633333333333334
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "04 - 11 - 13 - 15 - 16 | superbalota 10",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 4 (4/3/4), 11 (1/2/1), 13 (7/1/7), 15 (2/4/2), 16 (10/5/10).",
+     "balls": [
+      {
+       "number": 4,
+       "color": null
+      },
+      {
+       "number": 11,
+       "color": null
+      },
+      {
+       "number": 13,
+       "color": null
+      },
+      {
+       "number": 15,
+       "color": null
+      },
+      {
+       "number": 16,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 357900,
+     "cost": 936000,
+     "return": 0.38237179487179485,
+     "best_hits": 4,
+     "hits_3plus": 7,
+     "prize_draws": 24,
+     "hits": {
+      "0": 68,
+      "1": 66,
+      "2": 15,
+      "3": 6,
+      "4": 1
+     },
+     "percentile_vs_random": 0.993
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "09 - 11 - 15 - 28 - 32 | superbalota 10",
+     "reason": "Suma 95 (lo habitual: 91–127), 2 pares, 2 altos. Salidas: 9 (24), 11 (27), 15 (25), 28 (23), 32 (22).",
+     "balls": [
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 11,
+       "color": null
+      },
+      {
+       "number": 15,
+       "color": null
+      },
+      {
+       "number": 28,
+       "color": null
+      },
+      {
+       "number": 32,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 148000,
+     "cost": 936000,
+     "return": 0.1581196581196581,
+     "best_hits": 3,
+     "hits_3plus": 4,
+     "prize_draws": 21,
+     "hits": {
+      "0": 70,
+      "1": 55,
+      "2": 27,
+      "3": 4
+     },
+     "percentile_vs_random": 0.9393333333333334
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "09 - 11 - 15 - 28 - 32 | superbalota 10",
+     "reason": "11 y 15 salieron juntas 8 veces; se completan con 9, 28, 32.",
+     "balls": [
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 11,
+       "color": null
+      },
+      {
+       "number": 15,
+       "color": null
+      },
+      {
+       "number": 28,
+       "color": null
+      },
+      {
+       "number": 32,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 148000,
+     "cost": 936000,
+     "return": 0.1581196581196581,
+     "best_hits": 3,
+     "hits_3plus": 4,
+     "prize_draws": 21,
+     "hits": {
+      "0": 70,
+      "1": 55,
+      "2": 27,
+      "3": 4
+     },
+     "percentile_vs_random": 0.9393333333333334
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "01 - 02 - 22 - 34 - 37 | superbalota 06",
+     "reason": "Sorteos sin salir: 34 (48), 37 (39), 2 (34), 1 (27), 22 (14).",
+     "balls": [
+      {
+       "number": 1,
+       "color": null
+      },
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 22,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 37,
+       "color": null
+      }
+     ],
+     "extra": 6,
+     "won": 47700,
+     "cost": 936000,
+     "return": 0.05096153846153846,
+     "best_hits": 3,
+     "hits_3plus": 1,
+     "prize_draws": 7,
+     "hits": {
+      "0": 110,
+      "1": 39,
+      "2": 6,
+      "3": 1
+     },
+     "percentile_vs_random": 0.097
+    }
+   ]
+  },
+  "revancha": {
+   "game": "revancha",
+   "price": 3000,
+   "test_from": "2025-11-03",
+   "test_to": "2026-11-02",
+   "test_draws": 156,
+   "built_until": "2025-11-01",
+   "hits_threshold": 3,
+   "random": {
+    "sims": 3000,
+    "median_return": 0.08360042735042734,
+    "p5_return": 0.038461538461538464,
+    "p95_return": 0.1713835470085469,
+    "mean_hits_3plus": 1.1966666666666668,
+    "p95_hits_3plus": 3.0
+   },
+   "out_of_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "05 - 12 - 21 - 34 - 40 | superbalota 10",
+     "reason": "Veces que salió cada una en 127 sorteos: 5 (20), 12 (19), 21 (20), 34 (19), 40 (21).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 21,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 40,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 23850,
+     "cost": 468000,
+     "return": 0.05096153846153846,
+     "best_hits": 3,
+     "hits_3plus": 1,
+     "prize_draws": 7,
+     "hits": {
+      "0": 89,
+      "1": 52,
+      "2": 14,
+      "3": 1
+     },
+     "percentile_vs_random": 0.12466666666666666
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "05 - 12 - 21 - 34 - 40 | superbalota 10",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 5 (2/2/2), 12 (4/3/4), 21 (3/1/16), 34 (5/4/7), 40 (1/18/3).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 21,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 40,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 23850,
+     "cost": 468000,
+     "return": 0.05096153846153846,
+     "best_hits": 3,
+     "hits_3plus": 1,
+     "prize_draws": 7,
+     "hits": {
+      "0": 89,
+      "1": 52,
+      "2": 14,
+      "3": 1
+     },
+     "percentile_vs_random": 0.12466666666666666
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "05 - 12 - 21 - 34 - 40 | superbalota 10",
+     "reason": "Suma 112 (lo habitual: 91–130), 3 pares, 2 altos. Salidas: 5 (20), 12 (19), 21 (20), 34 (19), 40 (21).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 21,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 40,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 23850,
+     "cost": 468000,
+     "return": 0.05096153846153846,
+     "best_hits": 3,
+     "hits_3plus": 1,
+     "prize_draws": 7,
+     "hits": {
+      "0": 89,
+      "1": 52,
+      "2": 14,
+      "3": 1
+     },
+     "percentile_vs_random": 0.12466666666666666
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "05 - 10 - 21 - 34 - 40 | superbalota 10",
+     "reason": "10 y 40 salieron juntas 8 veces; se completan con 5, 21, 34.",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 21,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 40,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 29600,
+     "cost": 468000,
+     "return": 0.06324786324786325,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 8,
+     "hits": {
+      "0": 93,
+      "1": 52,
+      "2": 9,
+      "3": 2
+     },
+     "percentile_vs_random": 0.22066666666666668
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "02 - 03 - 10 - 16 - 35 | superbalota 10",
+     "reason": "Sorteos sin salir: 10 (52), 16 (22), 2 (16), 3 (16), 35 (16).",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 16,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      }
+     ],
+     "extra": 10,
+     "won": 29900,
+     "cost": 468000,
+     "return": 0.06388888888888888,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 8,
+     "hits": {
+      "0": 79,
+      "1": 64,
+      "2": 11,
+      "3": 2
+     },
+     "percentile_vs_random": 0.22666666666666666
+    }
+   ],
+   "in_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "14 - 17 - 27 - 35 - 42 | superbalota 08",
+     "reason": "Veces que salió cada una en 156 sorteos: 14 (24), 17 (26), 27 (24), 35 (25), 42 (29).",
+     "balls": [
+      {
+       "number": 14,
+       "color": null
+      },
+      {
+       "number": 17,
+       "color": null
+      },
+      {
+       "number": 27,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      },
+      {
+       "number": 42,
+       "color": null
+      }
+     ],
+     "extra": 8,
+     "won": 65800,
+     "cost": 468000,
+     "return": 0.1405982905982906,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 19,
+     "hits": {
+      "0": 58,
+      "1": 71,
+      "2": 24,
+      "3": 3
+     },
+     "percentile_vs_random": 0.913
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "12 - 14 - 17 - 35 - 42 | superbalota 08",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 12 (6/6/6), 14 (4/5/4), 17 (2/3/2), 35 (3/2/3), 42 (1/1/1).",
+     "balls": [
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 14,
+       "color": null
+      },
+      {
+       "number": 17,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      },
+      {
+       "number": 42,
+       "color": null
+      }
+     ],
+     "extra": 8,
+     "won": 66350,
+     "cost": 468000,
+     "return": 0.14177350427350427,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 18,
+     "hits": {
+      "0": 61,
+      "1": 65,
+      "2": 28,
+      "3": 2
+     },
+     "percentile_vs_random": 0.915
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "12 - 14 - 17 - 35 - 42 | superbalota 08",
+     "reason": "Suma 120 (lo habitual: 90–133), 3 pares, 2 altos. Salidas: 12 (23), 14 (24), 17 (26), 35 (25), 42 (29).",
+     "balls": [
+      {
+       "number": 12,
+       "color": null
+      },
+      {
+       "number": 14,
+       "color": null
+      },
+      {
+       "number": 17,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      },
+      {
+       "number": 42,
+       "color": null
+      }
+     ],
+     "extra": 8,
+     "won": 66350,
+     "cost": 468000,
+     "return": 0.14177350427350427,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 18,
+     "hits": {
+      "0": 61,
+      "1": 65,
+      "2": 28,
+      "3": 2
+     },
+     "percentile_vs_random": 0.915
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "08 - 14 - 17 - 35 - 42 | superbalota 08",
+     "reason": "8 y 17 salieron juntas 7 veces; se completan con 14, 35, 42.",
+     "balls": [
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 14,
+       "color": null
+      },
+      {
+       "number": 17,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      },
+      {
+       "number": 42,
+       "color": null
+      }
+     ],
+     "extra": 8,
+     "won": 65050,
+     "cost": 468000,
+     "return": 0.1389957264957265,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 18,
+     "hits": {
+      "0": 66,
+      "1": 62,
+      "2": 26,
+      "3": 2
+     },
+     "percentile_vs_random": 0.909
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "05 - 07 - 08 - 29 - 43 | superbalota 15",
+     "reason": "Sorteos sin salir: 7 (38), 43 (23), 8 (22), 29 (21), 5 (18).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 7,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 29,
+       "color": null
+      },
+      {
+       "number": 43,
+       "color": null
+      }
+     ],
+     "extra": 15,
+     "won": 12000,
+     "cost": 468000,
+     "return": 0.02564102564102564,
+     "best_hits": 2,
+     "hits_3plus": 0,
+     "prize_draws": 4,
+     "hits": {
+      "0": 96,
+      "1": 55,
+      "2": 5
+     },
+     "percentile_vs_random": 0.0
+    }
+   ]
+  },
+  "miloto": {
+   "game": "miloto",
+   "price": 4000,
+   "test_from": "2025-11-03",
+   "test_to": "2026-11-03",
+   "test_draws": 203,
+   "built_until": "2025-10-31",
+   "hits_threshold": 3,
+   "random": {
+    "sims": 3000,
+    "median_return": 0.20535714285714285,
+    "p5_return": 0.09852216748768473,
+    "p95_return": 0.9465609605911326,
+    "mean_hits_3plus": 2.0576666666666665,
+    "p95_hits_3plus": 5.0
+   },
+   "out_of_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "03 - 10 - 13 - 26 - 37",
+     "reason": "Veces que salió cada una en 209 sorteos: 3 (36), 10 (35), 13 (33), 26 (34), 37 (33).",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 13,
+       "color": null
+      },
+      {
+       "number": 26,
+       "color": null
+      },
+      {
+       "number": 37,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 169350,
+     "cost": 812000,
+     "return": 0.20855911330049262,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 23,
+     "hits": {
+      "0": 80,
+      "1": 100,
+      "2": 21,
+      "3": 2
+     },
+     "percentile_vs_random": 0.5106666666666667
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "03 - 10 - 13 - 26 - 37",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 3 (1/1/1), 10 (2/10/5), 13 (4/4/3), 26 (3/9/4), 37 (5/3/2).",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 13,
+       "color": null
+      },
+      {
+       "number": 26,
+       "color": null
+      },
+      {
+       "number": 37,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 169350,
+     "cost": 812000,
+     "return": 0.20855911330049262,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 23,
+     "hits": {
+      "0": 80,
+      "1": 100,
+      "2": 21,
+      "3": 2
+     },
+     "percentile_vs_random": 0.5106666666666667
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "03 - 10 - 13 - 26 - 37",
+     "reason": "Suma 89 (lo habitual: 81–116), 2 pares, 2 altos. Salidas: 3 (36), 10 (35), 13 (33), 26 (34), 37 (33).",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 13,
+       "color": null
+      },
+      {
+       "number": 26,
+       "color": null
+      },
+      {
+       "number": 37,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 169350,
+     "cost": 812000,
+     "return": 0.20855911330049262,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 23,
+     "hits": {
+      "0": 80,
+      "1": 100,
+      "2": 21,
+      "3": 2
+     },
+     "percentile_vs_random": 0.5106666666666667
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "03 - 08 - 10 - 26 - 37",
+     "reason": "3 y 8 salieron juntas 9 veces; se completan con 10, 26, 37.",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 26,
+       "color": null
+      },
+      {
+       "number": 37,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 218000,
+     "cost": 812000,
+     "return": 0.2684729064039409,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 25,
+     "hits": {
+      "0": 82,
+      "1": 96,
+      "2": 22,
+      "3": 3
+     },
+     "percentile_vs_random": 0.738
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "05 - 23 - 24 - 27 - 35",
+     "reason": "Sorteos sin salir: 24 (38), 23 (22), 35 (20), 27 (18), 5 (16).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 23,
+       "color": null
+      },
+      {
+       "number": 24,
+       "color": null
+      },
+      {
+       "number": 27,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 209550,
+     "cost": 812000,
+     "return": 0.2580665024630542,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 30,
+     "hits": {
+      "0": 96,
+      "1": 77,
+      "2": 27,
+      "3": 3
+     },
+     "percentile_vs_random": 0.7103333333333334
+    }
+   ],
+   "in_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "03 - 05 - 08 - 10 - 35",
+     "reason": "Veces que salió cada una en 203 sorteos: 3 (31), 5 (32), 8 (32), 10 (32), 35 (35).",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 315250,
+     "cost": 812000,
+     "return": 0.38823891625615764,
+     "best_hits": 3,
+     "hits_3plus": 5,
+     "prize_draws": 33,
+     "hits": {
+      "0": 79,
+      "1": 91,
+      "2": 28,
+      "3": 5
+     },
+     "percentile_vs_random": 0.9046666666666666
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "03 - 08 - 13 - 34 - 35",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 3 (3/13/5), 8 (2/5/3), 13 (6/6/6), 34 (9/4/9), 35 (1/2/1).",
+     "balls": [
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 13,
+       "color": null
+      },
+      {
+       "number": 34,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 240750,
+     "cost": 812000,
+     "return": 0.2964901477832512,
+     "best_hits": 3,
+     "hits_3plus": 4,
+     "prize_draws": 31,
+     "hits": {
+      "0": 79,
+      "1": 93,
+      "2": 27,
+      "3": 4
+     },
+     "percentile_vs_random": 0.8106666666666666
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "05 - 08 - 10 - 29 - 35",
+     "reason": "Suma 87 (lo habitual: 84–116), 2 pares, 2 altos. Salidas: 5 (32), 8 (32), 10 (32), 29 (30), 35 (35).",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 29,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 290700,
+     "cost": 812000,
+     "return": 0.35800492610837437,
+     "best_hits": 3,
+     "hits_3plus": 4,
+     "prize_draws": 34,
+     "hits": {
+      "0": 80,
+      "1": 89,
+      "2": 30,
+      "3": 4
+     },
+     "percentile_vs_random": 0.886
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "05 - 08 - 10 - 35 - 38",
+     "reason": "8 y 38 salieron juntas 10 veces; se completan con 5, 10, 35.",
+     "balls": [
+      {
+       "number": 5,
+       "color": null
+      },
+      {
+       "number": 8,
+       "color": null
+      },
+      {
+       "number": 10,
+       "color": null
+      },
+      {
+       "number": 35,
+       "color": null
+      },
+      {
+       "number": 38,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 1146850,
+     "cost": 812000,
+     "return": 1.4123768472906404,
+     "best_hits": 4,
+     "hits_3plus": 7,
+     "prize_draws": 30,
+     "hits": {
+      "0": 84,
+      "1": 89,
+      "2": 23,
+      "3": 6,
+      "4": 1
+     },
+     "percentile_vs_random": 0.9746666666666667
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "02 - 03 - 09 - 31 - 32",
+     "reason": "Sorteos sin salir: 2 (39), 32 (27), 9 (21), 31 (16), 3 (14).",
+     "balls": [
+      {
+       "number": 2,
+       "color": null
+      },
+      {
+       "number": 3,
+       "color": null
+      },
+      {
+       "number": 9,
+       "color": null
+      },
+      {
+       "number": 31,
+       "color": null
+      },
+      {
+       "number": 32,
+       "color": null
+      }
+     ],
+     "extra": null,
+     "won": 139700,
+     "cost": 812000,
+     "return": 0.17204433497536945,
+     "best_hits": 3,
+     "hits_3plus": 2,
+     "prize_draws": 20,
+     "hits": {
+      "0": 110,
+      "1": 73,
+      "2": 18,
+      "3": 2
+     },
+     "percentile_vs_random": 0.3406666666666667
+    }
+   ]
+  },
+  "colorloto": {
+   "game": "colorloto",
+   "price": 5000,
+   "test_from": "2025-11-03",
+   "test_to": "2026-11-02",
+   "test_draws": 102,
+   "built_until": "2025-10-30",
+   "hits_threshold": 3,
+   "random": {
+    "sims": 3000,
+    "median_return": 0.10426470588235294,
+    "p5_return": 0.019215686274509803,
+    "p95_return": 0.3799803921568623,
+    "mean_hits_3plus": 2.9383333333333335,
+    "p95_hits_3plus": 6.0
+   },
+   "out_of_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "1 verde - 2 negro - 2 rojo - 3 verde - 4 blanco - 6 negro",
+     "reason": "Veces que salió cada una en 105 sorteos: 1-verde (22), 2-negro (20), 2-rojo (20), 3-verde (20), 4-blanco (26), 6-negro (20).",
+     "balls": [
+      {
+       "number": 1,
+       "color": "verde"
+      },
+      {
+       "number": 2,
+       "color": "negro"
+      },
+      {
+       "number": 2,
+       "color": "rojo"
+      },
+      {
+       "number": 3,
+       "color": "verde"
+      },
+      {
+       "number": 4,
+       "color": "blanco"
+      },
+      {
+       "number": 6,
+       "color": "negro"
+      }
+     ],
+     "extra": null,
+     "won": 32750,
+     "cost": 510000,
+     "return": 0.0642156862745098,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 3,
+     "hits": {
+      "0": 42,
+      "1": 42,
+      "2": 15,
+      "3": 3
+     },
+     "percentile_vs_random": 0.31166666666666665
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "1 verde - 2 negro - 2 rojo - 3 verde - 4 blanco - 6 negro",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 1-verde (2/2/2), 2-negro (3/3/10), 2-rojo (4/5/3), 3-verde (5/4/6), 4-blanco (1/1/1), 6-negro (6/6/9).",
+     "balls": [
+      {
+       "number": 1,
+       "color": "verde"
+      },
+      {
+       "number": 2,
+       "color": "negro"
+      },
+      {
+       "number": 2,
+       "color": "rojo"
+      },
+      {
+       "number": 3,
+       "color": "verde"
+      },
+      {
+       "number": 4,
+       "color": "blanco"
+      },
+      {
+       "number": 6,
+       "color": "negro"
+      }
+     ],
+     "extra": null,
+     "won": 32750,
+     "cost": 510000,
+     "return": 0.0642156862745098,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 3,
+     "hits": {
+      "0": 42,
+      "1": 42,
+      "2": 15,
+      "3": 3
+     },
+     "percentile_vs_random": 0.31166666666666665
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "1 verde - 2 negro - 3 verde - 4 blanco - 5 rojo - 6 negro",
+     "reason": "Suma 21 (lo habitual: 21–27), 3 pares, 3 altos. Salidas: 1-verde (22), 2-negro (20), 3-verde (20), 4-blanco (26), 5-rojo (19), 6-negro (20).",
+     "balls": [
+      {
+       "number": 1,
+       "color": "verde"
+      },
+      {
+       "number": 2,
+       "color": "negro"
+      },
+      {
+       "number": 3,
+       "color": "verde"
+      },
+      {
+       "number": 4,
+       "color": "blanco"
+      },
+      {
+       "number": 5,
+       "color": "rojo"
+      },
+      {
+       "number": 6,
+       "color": "negro"
+      }
+     ],
+     "extra": null,
+     "won": 52950,
+     "cost": 510000,
+     "return": 0.1038235294117647,
+     "best_hits": 3,
+     "hits_3plus": 5,
+     "prize_draws": 5,
+     "hits": {
+      "0": 44,
+      "1": 40,
+      "2": 13,
+      "3": 5
+     },
+     "percentile_vs_random": 0.498
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "1 verde - 2 negro - 3 rojo - 4 blanco - 5 rojo - 6 negro",
+     "reason": "1-verde y 3-rojo salieron juntas 8 veces; se completan con 2-negro, 4-blanco, 5-rojo, 6-negro.",
+     "balls": [
+      {
+       "number": 1,
+       "color": "verde"
+      },
+      {
+       "number": 2,
+       "color": "negro"
+      },
+      {
+       "number": 3,
+       "color": "rojo"
+      },
+      {
+       "number": 4,
+       "color": "blanco"
+      },
+      {
+       "number": 5,
+       "color": "rojo"
+      },
+      {
+       "number": 6,
+       "color": "negro"
+      }
+     ],
+     "extra": null,
+     "won": 115450,
+     "cost": 510000,
+     "return": 0.22637254901960785,
+     "best_hits": 3,
+     "hits_3plus": 3,
+     "prize_draws": 5,
+     "hits": {
+      "0": 37,
+      "1": 45,
+      "2": 17,
+      "3": 3
+     },
+     "percentile_vs_random": 0.8043333333333333
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "1 azul - 2 amarillo - 3 azul - 5 negro - 5 verde - 6 azul",
+     "reason": "Sorteos sin salir: 2-amarillo (32), 5-verde (17), 3-azul (15), 6-azul (14), 5-negro (12), 1-azul (11).",
+     "balls": [
+      {
+       "number": 1,
+       "color": "azul"
+      },
+      {
+       "number": 2,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "azul"
+      },
+      {
+       "number": 5,
+       "color": "negro"
+      },
+      {
+       "number": 5,
+       "color": "verde"
+      },
+      {
+       "number": 6,
+       "color": "azul"
+      }
+     ],
+     "extra": null,
+     "won": 74700,
+     "cost": 510000,
+     "return": 0.14647058823529413,
+     "best_hits": 4,
+     "hits_3plus": 1,
+     "prize_draws": 1,
+     "hits": {
+      "0": 48,
+      "1": 35,
+      "2": 18,
+      "4": 1
+     },
+     "percentile_vs_random": 0.6336666666666667
+    }
+   ],
+   "in_sample": [
+    {
+     "criterion": "calientes",
+     "label": "Las que más salieron",
+     "text": "2 amarillo - 3 amarillo - 3 rojo - 4 rojo - 5 amarillo - 6 blanco",
+     "reason": "Veces que salió cada una en 102 sorteos: 2-amarillo (19), 3-amarillo (23), 3-rojo (20), 4-rojo (18), 5-amarillo (19), 6-blanco (20).",
+     "balls": [
+      {
+       "number": 2,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "rojo"
+      },
+      {
+       "number": 4,
+       "color": "rojo"
+      },
+      {
+       "number": 5,
+       "color": "amarillo"
+      },
+      {
+       "number": 6,
+       "color": "blanco"
+      }
+     ],
+     "extra": null,
+     "won": 150900,
+     "cost": 510000,
+     "return": 0.2958823529411765,
+     "best_hits": 4,
+     "hits_3plus": 8,
+     "prize_draws": 8,
+     "hits": {
+      "0": 25,
+      "1": 44,
+      "2": 25,
+      "3": 7,
+      "4": 1
+     },
+     "percentile_vs_random": 0.8936666666666667
+    },
+    {
+     "criterion": "consistentes",
+     "label": "Calientes en las tres ventanas",
+     "text": "2 amarillo - 3 amarillo - 3 rojo - 4 rojo - 5 amarillo - 6 blanco",
+     "reason": "Puestos en el ranking (12 meses / 100 sorteos / todo): 2-amarillo (4/4/4), 3-amarillo (1/1/1), 3-rojo (2/2/2), 4-rojo (6/5/6), 5-amarillo (5/7/5), 6-blanco (3/3/3).",
+     "balls": [
+      {
+       "number": 2,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "rojo"
+      },
+      {
+       "number": 4,
+       "color": "rojo"
+      },
+      {
+       "number": 5,
+       "color": "amarillo"
+      },
+      {
+       "number": 6,
+       "color": "blanco"
+      }
+     ],
+     "extra": null,
+     "won": 150900,
+     "cost": 510000,
+     "return": 0.2958823529411765,
+     "best_hits": 4,
+     "hits_3plus": 8,
+     "prize_draws": 8,
+     "hits": {
+      "0": 25,
+      "1": 44,
+      "2": 25,
+      "3": 7,
+      "4": 1
+     },
+     "percentile_vs_random": 0.8936666666666667
+    },
+    {
+     "criterion": "forma",
+     "label": "Calientes con forma típica",
+     "text": "2 amarillo - 3 amarillo - 3 rojo - 4 rojo - 5 amarillo - 6 blanco",
+     "reason": "Suma 23 (lo habitual: 22–27), 3 pares, 3 altos. Salidas: 2-amarillo (19), 3-amarillo (23), 3-rojo (20), 4-rojo (18), 5-amarillo (19), 6-blanco (20).",
+     "balls": [
+      {
+       "number": 2,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "rojo"
+      },
+      {
+       "number": 4,
+       "color": "rojo"
+      },
+      {
+       "number": 5,
+       "color": "amarillo"
+      },
+      {
+       "number": 6,
+       "color": "blanco"
+      }
+     ],
+     "extra": null,
+     "won": 150900,
+     "cost": 510000,
+     "return": 0.2958823529411765,
+     "best_hits": 4,
+     "hits_3plus": 8,
+     "prize_draws": 8,
+     "hits": {
+      "0": 25,
+      "1": 44,
+      "2": 25,
+      "3": 7,
+      "4": 1
+     },
+     "percentile_vs_random": 0.8936666666666667
+    },
+    {
+     "criterion": "pareja",
+     "label": "La pareja más repetida + calientes",
+     "text": "2 amarillo - 3 amarillo - 3 rojo - 4 rojo - 5 amarillo - 6 blanco",
+     "reason": "2-amarillo y 3-amarillo salieron juntas 8 veces; se completan con 3-rojo, 4-rojo, 5-amarillo, 6-blanco.",
+     "balls": [
+      {
+       "number": 2,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "amarillo"
+      },
+      {
+       "number": 3,
+       "color": "rojo"
+      },
+      {
+       "number": 4,
+       "color": "rojo"
+      },
+      {
+       "number": 5,
+       "color": "amarillo"
+      },
+      {
+       "number": 6,
+       "color": "blanco"
+      }
+     ],
+     "extra": null,
+     "won": 150900,
+     "cost": 510000,
+     "return": 0.2958823529411765,
+     "best_hits": 4,
+     "hits_3plus": 8,
+     "prize_draws": 8,
+     "hits": {
+      "0": 25,
+      "1": 44,
+      "2": 25,
+      "3": 7,
+      "4": 1
+     },
+     "percentile_vs_random": 0.8936666666666667
+    },
+    {
+     "criterion": "atrasados",
+     "label": "Las que llevan más tiempo sin salir",
+     "text": "1 rojo - 3 verde - 4 verde - 5 rojo - 7 azul - 7 negro",
+     "reason": "Sorteos sin salir: 3-verde (21), 7-azul (16), 1-rojo (16), 5-rojo (14), 4-verde (14), 7-negro (13).",
+     "balls": [
+      {
+       "number": 1,
+       "color": "rojo"
+      },
+      {
+       "number": 3,
+       "color": "verde"
+      },
+      {
+       "number": 4,
+       "color": "verde"
+      },
+      {
+       "number": 5,
+       "color": "rojo"
+      },
+      {
+       "number": 7,
+       "color": "azul"
+      },
+      {
+       "number": 7,
+       "color": "negro"
+      }
+     ],
+     "extra": null,
+     "won": 61200,
+     "cost": 510000,
+     "return": 0.12,
+     "best_hits": 3,
+     "hits_3plus": 6,
+     "prize_draws": 6,
+     "hits": {
+      "0": 40,
+      "1": 45,
+      "2": 11,
+      "3": 6
+     },
+     "percentile_vs_random": 0.554
+    }
+   ]
+  }
+ }
+}

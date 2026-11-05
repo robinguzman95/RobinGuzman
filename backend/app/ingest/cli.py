@@ -151,6 +151,31 @@ def cmd_expected_value(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_picks(args: argparse.Namespace) -> int:
+    """Evalúa las jugadas del analizador con premios reales -> data/picks_eval.json."""
+    import json
+    from datetime import date as _date
+
+    from app.analysis.picks import evaluate
+    from app.games import GAMES, get_game
+    from app.ingest.prizes import read_prizes_csv
+
+    settings = get_settings()
+    out = {"generated": _date.today().isoformat(), "games": {}}
+    for code, recs in _records_by_game(list(GAMES)).items():
+        prizes = read_prizes_csv(settings.raw_data_dir / f"{code}_premios.csv", code)
+        if not prizes:
+            continue
+        ev = evaluate(get_game(code), recs, prizes)
+        out["games"][code] = ev
+        r = ev["random"]
+        print(f"{code}: azar mediana {r['median_return']:.0%} · " + " · ".join(
+            f"{x['criterion']} fuera {x['return']:.0%} (p{x['percentile_vs_random']:.0%})" for x in ev["out_of_sample"]))
+    settings.picks_eval_path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"→ {settings.picks_eval_path}")
+    return 0
+
+
 def cmd_export_csv(args: argparse.Namespace) -> int:
     """BD -> data/raw/*.csv (fusiona; nunca pisa un resultado distinto)."""
     from app.games import GAMES
@@ -237,6 +262,9 @@ def main(argv: list[str] | None = None) -> int:
 
     ev = sub.add_parser("expected-value", help="valor esperado y potencia → data/expected_value.json")
     ev.set_defaults(func=cmd_expected_value)
+
+    pk = sub.add_parser("picks", help="evalúa las jugadas del analizador → data/picks_eval.json")
+    pk.set_defaults(func=cmd_picks)
 
     e = sub.add_parser("export-csv", help="respalda la BD en data/raw/*.csv")
     e.add_argument("--game", action="append", choices=list(GAMES))
