@@ -182,6 +182,24 @@ def play_stats(ticket: Ticket, game: type[Game], history: list[DrawRecord], wind
     )
 
 
+def build_play(t: Ticket, game: type[Game], history: list[DrawRecord], window: fq.Window, past: set,
+               ml_main=None, ml_extra=None) -> PlayOut:
+    """Todo lo que se muestra de una jugada: estadísticas, popularidad y (si hay) el modelo de ML."""
+    p = popularity(t, game, past)
+    out = PlayOut(
+        balls=[BallOut(number=n, color=c) for n, c in t.balls()], extra=t.extra, text=_text(t),
+        popularity_score=p.score, popularity_level=p.level, popularity_reasons=p.reasons,
+        stats=play_stats(t, game, history, window),
+    )
+    if ml_main is not None:
+        idx = {b: i for i, b in enumerate(fq.all_balls(game))}
+        out.ml_probabilities = [ml_main.probabilities[idx[b]] for b in t.balls()]
+        out.ml_base = ml_main.base
+        if ml_extra is not None and t.extra is not None:
+            out.ml_extra_probability = ml_extra.probabilities[t.extra - 1]
+    return out
+
+
 def ml_plays(game: type[Game], main, extra, n: int, rng: random.Random) -> list[Ticket]:
     """Jugada 1 = las K balotas con más probabilidad según el modelo. Las demás se sortean
     ponderando por probabilidad⁴ (favorece a las altas), variadas entre sí (comparten ≤ K−2)."""
@@ -245,20 +263,6 @@ def generate(body: GenerateIn, session: Session = Depends(get_session)) -> Gener
                 seen.add(frozenset(t.balls()))
                 tickets.append(t)
 
-    plays = []
-    idx = {b: i for i, b in enumerate(fq.all_balls(game))}
-    for t in tickets:
-        p = popularity(t, game, past)
-        out = PlayOut(
-            balls=[BallOut(number=n, color=c) for n, c in t.balls()], extra=t.extra, text=_text(t),
-            popularity_score=p.score, popularity_level=p.level, popularity_reasons=p.reasons,
-            stats=play_stats(t, game, history, window),
-        )
-        if ml_main is not None:
-            out.ml_probabilities = [ml_main.probabilities[idx[b]] for b in t.balls()]
-            out.ml_base = ml_main.base
-            if ml_extra is not None and t.extra is not None:
-                out.ml_extra_probability = ml_extra.probabilities[t.extra - 1]
-        plays.append(out)
+    plays = [build_play(t, game, history, window, past, ml_main, ml_extra) for t in tickets]
     return GenerateOut(game=game.code, mode=body.mode, seed=seed, plays=plays, odds=odds_of(game),
                        notice=NOTICES[body.mode])

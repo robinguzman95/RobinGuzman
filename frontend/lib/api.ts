@@ -211,6 +211,12 @@ export const api = {
   stats: (code: string, window: string) =>
     request<StatsOut>(`/games/${code}/stats?window=${encodeURIComponent(window)}`),
   summary: () => request<SummaryOut>("/backtest/summary"),
+  analyze: (body: {
+    game: string;
+    balls: { number: number; color?: string | null }[];
+    extra?: number | null;
+    window: "12m" | "100" | "all";
+  }) => request<S["AnalyzeOut"]>("/analyze", { method: "POST", body: JSON.stringify(body) }),
   ml: (code: string, model: string) => request<MLOut>(`/games/${code}/ml?model=${model}`),
   picks: (code: string, window: string) =>
     request<PicksOut>(`/games/${code}/picks?window=${encodeURIComponent(window)}`),

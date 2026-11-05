@@ -211,6 +211,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/analyze": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Analyze */
+        post: operations["analyze_analyze_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/health": {
         parameters: {
             query?: never;
@@ -232,6 +249,50 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** AllHistory */
+        AllHistory: {
+            /** Draws */
+            draws: number;
+            /** Date From */
+            date_from: string;
+            /** Date To */
+            date_to: string;
+            /** Hits */
+            hits: {
+                [key: string]: number;
+            };
+            /** Exact Matches */
+            exact_matches: components["schemas"]["DrawRef"][];
+            /** Best */
+            best: components["schemas"]["DrawRef"][];
+        };
+        /** AnalyzeIn */
+        AnalyzeIn: {
+            /** Game */
+            game: string;
+            /** Balls */
+            balls: components["schemas"]["BallOut"][];
+            /** Extra */
+            extra?: number | null;
+            /**
+             * Window
+             * @default 12m
+             * @enum {string}
+             */
+            window: "12m" | "100" | "all";
+        };
+        /** AnalyzeOut */
+        AnalyzeOut: {
+            /** Game */
+            game: string;
+            /** Name */
+            name: string;
+            play: components["schemas"]["PlayOut"];
+            all_history: components["schemas"]["AllHistory"];
+            odds: components["schemas"]["Odds"];
+            /** Notice */
+            notice: string;
+        };
         /**
          * BacktestIn
          * @description La API es pública y cada corrida distinta se guarda: el espacio de combinaciones se limita a
@@ -391,6 +452,17 @@ export interface components {
             total: number;
             /** Items */
             items: components["schemas"]["DrawOut"][];
+        };
+        /** DrawRef */
+        DrawRef: {
+            /** Draw Number */
+            draw_number: number;
+            /** Draw Date */
+            draw_date: string;
+            /** Hits */
+            hits: number;
+            /** Extra Hit */
+            extra_hit: boolean | null;
         };
         /** GameOut */
         GameOut: {
@@ -1074,6 +1146,39 @@ export interface operations {
                     "application/json": {
                         [key: string]: unknown;
                     };
+                };
+            };
+            /** @description Validation Error */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HTTPValidationError"];
+                };
+            };
+        };
+    };
+    analyze_analyze_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AnalyzeIn"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["AnalyzeOut"];
                 };
             };
             /** @description Validation Error */

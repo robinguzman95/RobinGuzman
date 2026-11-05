@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { Balls } from "@/components/Balls";
 import { OddsNotice } from "@/components/OddsNotice";
+import { PlayDetails } from "@/components/PlayDetails";
 import { api, type GenerateOut } from "@/lib/api";
-import { dateEs, num } from "@/lib/format";
 
 const GAMES = [
   { code: "baloto", name: "Baloto" },
@@ -20,9 +20,6 @@ const WINDOWS = [
 ] as const;
 type Mode = "historico" | "ml" | "anti_popular";
 type Window = (typeof WINDOWS)[number]["value"];
-
-const money = (x: number) => `$${num(x)}`;
-const pct = (r: number) => `${num(r * 100, 0)} %`;
 
 export default function GeneratorPage() {
   const [game, setGame] = useState("baloto");
@@ -142,8 +139,6 @@ export default function GeneratorPage() {
       {out && (
         <ol className="space-y-3">
           {out.plays.map((p, i) => {
-            const s = p.stats;
-            const h = s?.history;
             return (
               <li key={i} className="card space-y-3 p-4">
                 <div className="flex flex-wrap items-center gap-4">
@@ -155,71 +150,15 @@ export default function GeneratorPage() {
                   <span className="sr-only">{p.text}</span>
                 </div>
 
-                {out.mode === "ml" && p.ml_probabilities && p.ml_base != null && (
-                  <p className="text-sm">
-                    <span className="font-semibold">Probabilidad según el modelo</span> (azar: {num(p.ml_base * 100, 1)}{" "}
-                    % cada una):{" "}
-                    {p.balls
-                      .map(
-                        (b, j) =>
-                          `${b.color ? `${b.number}-${b.color}` : b.number} (${num(p.ml_probabilities![j] * 100, 1)} %)`,
-                      )
-                      .join(", ")}
-                    {p.extra != null && p.ml_extra_probability != null && (
-                      <>
-                        {" "}
-                        · superbalota {String(p.extra).padStart(2, "0")} ({num(p.ml_extra_probability * 100, 1)} %; azar
-                        6,3 %)
-                      </>
-                    )}
-                    .
-                  </p>
-                )}
-
-                {s && (out.mode === "historico" || out.mode === "ml") && (
-                  <div className="grid gap-x-6 gap-y-2 text-sm md:grid-cols-2">
-                    <p>
-                      <span className="font-semibold">Veces que salió cada una</span> en {num(s.window_draws)} sorteos
-                      (lo normal: {num(s.expected_count, 1)}):{" "}
-                      {s.counts.map((c) => `${c.label} (${c.count})`).join(", ")}
-                      {extraName && p.extra != null && s.extra_count != null && s.extra_expected != null && (
-                        <>
-                          {" "}
-                          · {extraName} {String(p.extra).padStart(2, "0")} ({s.extra_count}; lo normal{" "}
-                          {num(s.extra_expected, 1)})
-                        </>
-                      )}
-                      .
-                    </p>
-                    <p>
-                      <span className="font-semibold">Forma:</span> suma {s.sum}, {s.evens} pares, {s.highs} altos
-                      {s.shape_ok ? " (típica de un resultado ganador)" : " (fuera de lo habitual)"}.
-                      {s.frequent_pairs.length > 0 && (
-                        <>
-                          {" "}
-                          <span className="font-semibold">Parejas frecuentes:</span>{" "}
-                          {s.frequent_pairs.map((x) => `${x.pair} (${x.count} veces juntas)`).join(", ")}.
-                        </>
-                      )}
-                    </p>
-                    {h && (
-                      <p className="md:col-span-2">
-                        <span className="font-semibold">Jugándola en cada sorteo del último año</span> ({h.draws}{" "}
-                        sorteos, {dateEs(h.date_from)} → {dateEs(h.date_to)}, {money(h.cost)}): habría ganado{" "}
-                        <strong>{money(h.won)}</strong> ({pct(h.ret)} de lo jugado) en {h.prize_draws} sorteos; mejor
-                        resultado {h.best_hits} aciertos; 3 o más aciertos {h.hits_3plus}{" "}
-                        {h.hits_3plus === 1 ? "vez" : "veces"}.
-                      </p>
-                    )}
-                  </div>
-                )}
-
-                {out.mode === "anti_popular" && (
-                  <div className="text-sm text-secondary">
-                    Popularidad {p.popularity_score}/100 ({p.popularity_level})
-                    {p.popularity_reasons.length > 0 && <span> · {p.popularity_reasons.join("; ")}</span>}
-                  </div>
-                )}
+                <PlayDetails
+                  play={p}
+                  extraName={extraName}
+                  show={{
+                    ml: out.mode === "ml",
+                    stats: out.mode === "historico" || out.mode === "ml",
+                    popularity: out.mode === "anti_popular",
+                  }}
+                />
               </li>
             );
           })}

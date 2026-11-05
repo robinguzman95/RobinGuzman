@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
+from app.api.analyze import router as analyze_router
 from app.api.backtest import router as backtest_router
 from app.api.games import router as games_router
 from app.api.generate import router as generate_router
@@ -36,6 +37,7 @@ app.include_router(ingest_router)
 app.include_router(value_router)
 app.include_router(picks_router)
 app.include_router(ml_router)
+app.include_router(analyze_router)
 
 
 @app.get("/health")
