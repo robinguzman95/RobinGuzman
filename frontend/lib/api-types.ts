@@ -4,1214 +4,1249 @@
  */
 
 export interface paths {
-    "/games": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** List Games */
-        get: operations["list_games_games_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+  "/games": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/games/{code}/draws": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** List Draws */
-        get: operations["list_draws_games__code__draws_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** List Games */
+    get: operations["list_games_games_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/games/{code}/draws": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/games/{code}/stats": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Game Stats */
-        get: operations["game_stats_games__code__stats_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** List Draws */
+    get: operations["list_draws_games__code__draws_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/games/{code}/stats": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/backtest": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Create Backtest */
-        post: operations["create_backtest_backtest_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Game Stats */
+    get: operations["game_stats_games__code__stats_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/backtest": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/backtest/summary": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /**
-         * Backtest Summary
-         * @description Resultado de la última corrida de `lotolab backtest-all` (60 combinaciones + Bonferroni).
-         */
-        get: operations["backtest_summary_backtest_summary_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Create Backtest */
+    post: operations["create_backtest_backtest_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/backtest/summary": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/backtest/{run_id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Get Backtest */
-        get: operations["get_backtest_backtest__run_id__get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /**
+     * Backtest Summary
+     * @description Resultado de la última corrida de `lotolab backtest-all` (60 combinaciones + Bonferroni).
+     */
+    get: operations["backtest_summary_backtest_summary_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/backtest/{run_id}": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/generate": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Generate */
-        post: operations["generate_generate_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Get Backtest */
+    get: operations["get_backtest_backtest__run_id__get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/generate": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/ingest/run": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Run Ingest */
-        post: operations["run_ingest_ingest_run_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Generate */
+    post: operations["generate_generate_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/ingest/run": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/expected-value": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** All Expected Value */
-        get: operations["all_expected_value_expected_value_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Run Ingest */
+    post: operations["run_ingest_ingest_run_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/expected-value": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/games/{code}/expected-value": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Game Expected Value */
-        get: operations["game_expected_value_games__code__expected_value_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** All Expected Value */
+    get: operations["all_expected_value_expected_value_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/games/{code}/expected-value": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/games/{code}/picks": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Game Picks */
-        get: operations["game_picks_games__code__picks_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Game Expected Value */
+    get: operations["game_expected_value_games__code__expected_value_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/games/{code}/picks": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/games/{code}/ml": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Game Ml */
-        get: operations["game_ml_games__code__ml_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Game Picks */
+    get: operations["game_picks_games__code__picks_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/games/{code}/ml": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/analyze": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        /** Analyze */
-        post: operations["analyze_analyze_post"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    /** Game Ml */
+    get: operations["game_ml_games__code__ml_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/analyze": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    "/health": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        /** Health */
-        get: operations["health_health_get"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
+    get?: never;
+    put?: never;
+    /** Analyze */
+    post: operations["analyze_analyze_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/overview": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    /** Overview */
+    get: operations["overview_overview_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/health": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    /** Health */
+    get: operations["health_health_get"];
+    put?: never;
+    post?: never;
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
 }
 export type webhooks = Record<string, never>;
 export interface components {
-    schemas: {
-        /** AllHistory */
-        AllHistory: {
-            /** Draws */
-            draws: number;
-            /** Date From */
-            date_from: string;
-            /** Date To */
-            date_to: string;
-            /** Hits */
-            hits: {
-                [key: string]: number;
-            };
-            /** Exact Matches */
-            exact_matches: components["schemas"]["DrawRef"][];
-            /** Best */
-            best: components["schemas"]["DrawRef"][];
-        };
-        /** AnalyzeIn */
-        AnalyzeIn: {
-            /** Game */
-            game: string;
-            /** Balls */
-            balls: components["schemas"]["BallOut"][];
-            /** Extra */
-            extra?: number | null;
-            /**
-             * Window
-             * @default 12m
-             * @enum {string}
-             */
-            window: "12m" | "100" | "all";
-        };
-        /** AnalyzeOut */
-        AnalyzeOut: {
-            /** Game */
-            game: string;
-            /** Name */
-            name: string;
-            play: components["schemas"]["PlayOut"];
-            all_history: components["schemas"]["AllHistory"];
-            odds: components["schemas"]["Odds"];
-            /** Notice */
-            notice: string;
-        };
-        /**
-         * BacktestIn
-         * @description La API es pública y cada corrida distinta se guarda: el espacio de combinaciones se limita a
-         *     las ventanas del laboratorio y pocas semillas (como mucho 4 × 5 × 3 × 21 filas por versión de
-         *     datos). Rangos de fechas y otras ventanas: usar `lotolab backtest` en local.
-         */
-        BacktestIn: {
-            /** Game */
-            game: string;
-            /**
-             * Strategy
-             * @description una de: random, hot, cold, overdue, anti_popular
-             */
-            strategy: string;
-            /**
-             * Window
-             * @default 100
-             * @enum {integer}
-             */
-            window: 50 | 100 | 200;
-            /**
-             * Seed
-             * @default 0
-             */
-            seed: number;
-        };
-        /** BacktestOut */
-        BacktestOut: {
-            /** Id */
-            id: number;
-            /** Game */
-            game: string;
-            /** Strategy */
-            strategy: string;
-            /** Window */
-            window: number;
-            /** Is Primary Window */
-            is_primary_window: boolean;
-            /**
-             * Date From
-             * Format: date
-             */
-            date_from: string;
-            /**
-             * Date To
-             * Format: date
-             */
-            date_to: string;
-            /** N Draws */
-            n_draws: number;
-            /** Avg Hits */
-            avg_hits: number;
-            /** Hit Distribution */
-            hit_distribution: {
-                [key: string]: number;
-            };
-            /** Extra Hit Rate */
-            extra_hit_rate: number | null;
-            /** Baseline Mean */
-            baseline_mean: number;
-            /** Baseline P5 */
-            baseline_p5: number;
-            /** Baseline P95 */
-            baseline_p95: number;
-            /** P Value */
-            p_value: number;
-            /** Beats Random */
-            beats_random: boolean;
-            /** Verdict */
-            verdict: string;
-            /** Series */
-            series: components["schemas"]["SeriesPoint"][];
-            odds: components["schemas"]["Odds"];
-            /** Disclaimer */
-            disclaimer: string;
-        };
-        /** BallCount */
-        BallCount: {
-            /** Label */
-            label: string;
-            /** Count */
-            count: number;
-        };
-        /** BallOut */
-        BallOut: {
-            /** Number */
-            number: number;
-            /** Color */
-            color?: string | null;
-        };
-        /** BallStatOut */
-        BallStatOut: {
-            /** Label */
-            label: string;
-            /** Number */
-            number: number;
-            /** Color */
-            color: string | null;
-            /** Count */
-            count: number;
-            /** Draws Since */
-            draws_since: number | null;
-            /** Days Since */
-            days_since: number | null;
-        };
-        /** ChiSquareOut */
-        ChiSquareOut: {
-            /** Label */
-            label: string;
-            /** Statistic */
-            statistic: number;
-            /** Dof */
-            dof: number;
-            /** P Value */
-            p_value: number | null;
-            /** Expected Per Cell */
-            expected_per_cell: number;
-            /** Correction */
-            correction: number;
-            /** Reliable */
-            reliable: boolean;
-            /** Verdict */
-            verdict: string;
-        };
-        /** ComboOut */
-        ComboOut: {
-            /** Balls */
-            balls: string[];
-            /** Count */
-            count: number;
-        };
-        /** DrawOut */
-        DrawOut: {
-            /** Draw Number */
-            draw_number: number;
-            /**
-             * Draw Date
-             * Format: date
-             */
-            draw_date: string;
-            /** Balls */
-            balls: components["schemas"]["BallOut"][];
-            /** Extra */
-            extra: number | null;
-            /** Source Url */
-            source_url: string | null;
-        };
-        /** DrawPage */
-        DrawPage: {
-            /** Game */
-            game: string;
-            /** Page */
-            page: number;
-            /** Page Size */
-            page_size: number;
-            /** Total */
-            total: number;
-            /** Items */
-            items: components["schemas"]["DrawOut"][];
-        };
-        /** DrawRef */
-        DrawRef: {
-            /** Draw Number */
-            draw_number: number;
-            /** Draw Date */
-            draw_date: string;
-            /** Hits */
-            hits: number;
-            /** Extra Hit */
-            extra_hit: boolean | null;
-        };
-        /** GameOut */
-        GameOut: {
-            /** Code */
-            code: string;
-            /** Name */
-            name: string;
-            /** Main Count */
-            main_count: number;
-            /** Main Max */
-            main_max: number;
-            /** Extra Max */
-            extra_max: number | null;
-            /** Colors */
-            colors: string[] | null;
-            odds: components["schemas"]["Odds"];
-        };
-        /** GenerateIn */
-        GenerateIn: {
-            /** Game */
-            game: string;
-            /**
-             * N
-             * @default 5
-             */
-            n: number;
-            /**
-             * Mode
-             * @default historico
-             * @enum {string}
-             */
-            mode: "historico" | "ml" | "anti_popular";
-            /**
-             * Window
-             * @default 12m
-             * @enum {string}
-             */
-            window: "12m" | "100" | "all";
-            /**
-             * Seed
-             * @description opcional, para reproducir las mismas jugadas
-             */
-            seed?: number | null;
-        };
-        /** GenerateOut */
-        GenerateOut: {
-            /** Game */
-            game: string;
-            /** Mode */
-            mode: string;
-            /** Seed */
-            seed: number;
-            /** Plays */
-            plays: components["schemas"]["PlayOut"][];
-            odds: components["schemas"]["Odds"];
-            /** Notice */
-            notice: string;
-        };
-        /** HTTPValidationError */
-        HTTPValidationError: {
-            /** Detail */
-            detail?: components["schemas"]["ValidationError"][];
-        };
-        /** Odds */
-        Odds: {
-            /** Combinations */
-            combinations: number;
-            /** Jackpot Odds */
-            jackpot_odds: string;
-            /** Jackpot Probability */
-            jackpot_probability: number;
-        };
-        /** PairCount */
-        PairCount: {
-            /** Pair */
-            pair: string;
-            /** Count */
-            count: number;
-        };
-        /** PlayHistory */
-        PlayHistory: {
-            /** Draws */
-            draws: number;
-            /** Cost */
-            cost: number;
-            /** Won */
-            won: number;
-            /** Ret */
-            ret: number;
-            /** Prize Draws */
-            prize_draws: number;
-            /** Best Hits */
-            best_hits: number;
-            /** Hits 3Plus */
-            hits_3plus: number;
-            /** Date From */
-            date_from: string | null;
-            /** Date To */
-            date_to: string | null;
-        };
-        /** PlayOut */
-        PlayOut: {
-            /** Balls */
-            balls: components["schemas"]["BallOut"][];
-            /** Extra */
-            extra: number | null;
-            /** Text */
-            text: string;
-            /** Popularity Score */
-            popularity_score: number;
-            /** Popularity Level */
-            popularity_level: string;
-            /** Popularity Reasons */
-            popularity_reasons: string[];
-            stats?: components["schemas"]["PlayStats"] | null;
-            /** Ml Probabilities */
-            ml_probabilities?: number[] | null;
-            /** Ml Extra Probability */
-            ml_extra_probability?: number | null;
-            /** Ml Base */
-            ml_base?: number | null;
-        };
-        /** PlayStats */
-        PlayStats: {
-            /** Window Draws */
-            window_draws: number;
-            /** Expected Count */
-            expected_count: number;
-            /** Counts */
-            counts: components["schemas"]["BallCount"][];
-            /** Total Count */
-            total_count: number;
-            /** Sum */
-            sum: number;
-            /** Evens */
-            evens: number;
-            /** Highs */
-            highs: number;
-            /** Shape Ok */
-            shape_ok: boolean;
-            /** Frequent Pairs */
-            frequent_pairs: components["schemas"]["PairCount"][];
-            /** Extra Count */
-            extra_count: number | null;
-            /** Extra Expected */
-            extra_expected: number | null;
-            history: components["schemas"]["PlayHistory"] | null;
-        };
-        /** RunsOut */
-        RunsOut: {
-            /** Tested */
-            tested: number;
-            /** Alpha Bonferroni */
-            alpha_bonferroni: number;
-            /** Significant Raw */
-            significant_raw: number;
-            /** Significant Bonferroni */
-            significant_bonferroni: string[];
-            /** Min P Value */
-            min_p_value: number | null;
-            /** Verdict */
-            verdict: string;
-        };
-        /** SeriesPoint */
-        SeriesPoint: {
-            /** Draw Number */
-            draw_number: number;
-            /**
-             * Draw Date
-             * Format: date
-             */
-            draw_date: string;
-            /** Strategy */
-            strategy: number;
-            /** P5 */
-            p5: number;
-            /** P95 */
-            p95: number;
-        };
-        /** ShapeOut */
-        ShapeOut: {
-            /** Sum Min */
-            sum_min: number;
-            /** Sum Max */
-            sum_max: number;
-            /** Sum Mean */
-            sum_mean: number;
-            /** Even Counts */
-            even_counts: {
-                [key: string]: number;
-            };
-            /** High Counts */
-            high_counts: {
-                [key: string]: number;
-            };
-        };
-        /** StatsOut */
-        StatsOut: {
-            /** Game */
-            game: string;
-            /** Window */
-            window: string;
-            /** N Draws */
-            n_draws: number;
-            /** Date From */
-            date_from: string | null;
-            /** Date To */
-            date_to: string | null;
-            odds: components["schemas"]["Odds"];
-            /** Disclaimer */
-            disclaimer: string;
-            /** Frequency */
-            frequency: {
-                [key: string]: number;
-            };
-            /** Number Frequency */
-            number_frequency: {
-                [key: string]: number;
-            } | null;
-            /** Color Frequency */
-            color_frequency: {
-                [key: string]: number;
-            } | null;
-            /** Extra Frequency */
-            extra_frequency: {
-                [key: string]: number;
-            } | null;
-            /** Hot */
-            hot: components["schemas"]["BallStatOut"][];
-            /** Cold */
-            cold: components["schemas"]["BallStatOut"][];
-            /** Overdue */
-            overdue: components["schemas"]["BallStatOut"][];
-            /** Top Pairs */
-            top_pairs: components["schemas"]["ComboOut"][];
-            /** Pair Counts */
-            pair_counts: [
-                string,
-                string,
-                number
-            ][];
-            /** Top Triples */
-            top_triples: components["schemas"]["ComboOut"][];
-            shape: components["schemas"]["ShapeOut"] | null;
-            /** Uniformity */
-            uniformity: components["schemas"]["ChiSquareOut"][];
-            runs: components["schemas"]["RunsOut"];
-        };
-        /** SummaryOut */
-        SummaryOut: {
-            /**
-             * Generated
-             * Format: date
-             */
-            generated: string;
-            /** Primary Window */
-            primary_window: number;
-            /** Alpha */
-            alpha: number;
-            /** Alpha Bonferroni */
-            alpha_bonferroni: number;
-            /** Combinations */
-            combinations: number;
-            /** Notes */
-            notes: string[];
-            /** Rows */
-            rows: components["schemas"]["SummaryRow"][];
-        };
-        /** SummaryRow */
-        SummaryRow: {
-            /** Game */
-            game: string;
-            /** Strategy */
-            strategy: string;
-            /** Window */
-            window: number;
-            /** Primary */
-            primary: boolean;
-            /** N Draws */
-            n_draws: number;
-            /**
-             * Date From
-             * Format: date
-             */
-            date_from: string;
-            /**
-             * Date To
-             * Format: date
-             */
-            date_to: string;
-            /** Avg Hits */
-            avg_hits: number;
-            /** Baseline P5 */
-            baseline_p5: number;
-            /** Baseline P95 */
-            baseline_p95: number;
-            /** P Value */
-            p_value: number;
-            /** Above P95 */
-            above_p95: boolean;
-            /** Significant Bonferroni */
-            significant_bonferroni: boolean;
-        };
-        /** ValidationError */
-        ValidationError: {
-            /** Location */
-            loc: (string | number)[];
-            /** Message */
-            msg: string;
-            /** Error Type */
-            type: string;
-            /** Input */
-            input?: unknown;
-            /** Context */
-            ctx?: Record<string, never>;
-        };
+  schemas: {
+    /** AllHistory */
+    AllHistory: {
+      /** Draws */
+      draws: number;
+      /** Date From */
+      date_from: string;
+      /** Date To */
+      date_to: string;
+      /** Hits */
+      hits: {
+        [key: string]: number;
+      };
+      /** Exact Matches */
+      exact_matches: components["schemas"]["DrawRef"][];
+      /** Best */
+      best: components["schemas"]["DrawRef"][];
     };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
+    /** AnalyzeIn */
+    AnalyzeIn: {
+      /** Game */
+      game: string;
+      /** Balls */
+      balls: components["schemas"]["BallOut"][];
+      /** Extra */
+      extra?: number | null;
+      /**
+       * Window
+       * @default 12m
+       * @enum {string}
+       */
+      window: "12m" | "100" | "all";
+    };
+    /** AnalyzeOut */
+    AnalyzeOut: {
+      /** Game */
+      game: string;
+      /** Name */
+      name: string;
+      play: components["schemas"]["PlayOut"];
+      all_history: components["schemas"]["AllHistory"];
+      odds: components["schemas"]["Odds"];
+      /** Notice */
+      notice: string;
+    };
+    /**
+     * BacktestIn
+     * @description La API es pública y cada corrida distinta se guarda: el espacio de combinaciones se limita a
+     *     las ventanas del laboratorio y pocas semillas (como mucho 4 × 5 × 3 × 21 filas por versión de
+     *     datos). Rangos de fechas y otras ventanas: usar `lotolab backtest` en local.
+     */
+    BacktestIn: {
+      /** Game */
+      game: string;
+      /**
+       * Strategy
+       * @description una de: random, hot, cold, overdue, anti_popular
+       */
+      strategy: string;
+      /**
+       * Window
+       * @default 100
+       * @enum {integer}
+       */
+      window: 50 | 100 | 200;
+      /**
+       * Seed
+       * @default 0
+       */
+      seed: number;
+    };
+    /** BacktestOut */
+    BacktestOut: {
+      /** Id */
+      id: number;
+      /** Game */
+      game: string;
+      /** Strategy */
+      strategy: string;
+      /** Window */
+      window: number;
+      /** Is Primary Window */
+      is_primary_window: boolean;
+      /**
+       * Date From
+       * Format: date
+       */
+      date_from: string;
+      /**
+       * Date To
+       * Format: date
+       */
+      date_to: string;
+      /** N Draws */
+      n_draws: number;
+      /** Avg Hits */
+      avg_hits: number;
+      /** Hit Distribution */
+      hit_distribution: {
+        [key: string]: number;
+      };
+      /** Extra Hit Rate */
+      extra_hit_rate: number | null;
+      /** Baseline Mean */
+      baseline_mean: number;
+      /** Baseline P5 */
+      baseline_p5: number;
+      /** Baseline P95 */
+      baseline_p95: number;
+      /** P Value */
+      p_value: number;
+      /** Beats Random */
+      beats_random: boolean;
+      /** Verdict */
+      verdict: string;
+      /** Series */
+      series: components["schemas"]["SeriesPoint"][];
+      odds: components["schemas"]["Odds"];
+      /** Disclaimer */
+      disclaimer: string;
+    };
+    /** BallCount */
+    BallCount: {
+      /** Label */
+      label: string;
+      /** Count */
+      count: number;
+    };
+    /** BallOut */
+    BallOut: {
+      /** Number */
+      number: number;
+      /** Color */
+      color?: string | null;
+    };
+    /** BallStatOut */
+    BallStatOut: {
+      /** Label */
+      label: string;
+      /** Number */
+      number: number;
+      /** Color */
+      color: string | null;
+      /** Count */
+      count: number;
+      /** Draws Since */
+      draws_since: number | null;
+      /** Days Since */
+      days_since: number | null;
+    };
+    /** ChiSquareOut */
+    ChiSquareOut: {
+      /** Label */
+      label: string;
+      /** Statistic */
+      statistic: number;
+      /** Dof */
+      dof: number;
+      /** P Value */
+      p_value: number | null;
+      /** Expected Per Cell */
+      expected_per_cell: number;
+      /** Correction */
+      correction: number;
+      /** Reliable */
+      reliable: boolean;
+      /** Verdict */
+      verdict: string;
+    };
+    /** ComboOut */
+    ComboOut: {
+      /** Balls */
+      balls: string[];
+      /** Count */
+      count: number;
+    };
+    /** DrawOut */
+    DrawOut: {
+      /** Draw Number */
+      draw_number: number;
+      /**
+       * Draw Date
+       * Format: date
+       */
+      draw_date: string;
+      /** Balls */
+      balls: components["schemas"]["BallOut"][];
+      /** Extra */
+      extra: number | null;
+      /** Source Url */
+      source_url: string | null;
+    };
+    /** DrawPage */
+    DrawPage: {
+      /** Game */
+      game: string;
+      /** Page */
+      page: number;
+      /** Page Size */
+      page_size: number;
+      /** Total */
+      total: number;
+      /** Items */
+      items: components["schemas"]["DrawOut"][];
+    };
+    /** DrawRef */
+    DrawRef: {
+      /** Draw Number */
+      draw_number: number;
+      /** Draw Date */
+      draw_date: string;
+      /** Hits */
+      hits: number;
+      /** Extra Hit */
+      extra_hit: boolean | null;
+    };
+    /** GameOut */
+    GameOut: {
+      /** Code */
+      code: string;
+      /** Name */
+      name: string;
+      /** Main Count */
+      main_count: number;
+      /** Main Max */
+      main_max: number;
+      /** Extra Max */
+      extra_max: number | null;
+      /** Colors */
+      colors: string[] | null;
+      odds: components["schemas"]["Odds"];
+    };
+    /** GenerateIn */
+    GenerateIn: {
+      /** Game */
+      game: string;
+      /**
+       * N
+       * @default 5
+       */
+      n: number;
+      /**
+       * Mode
+       * @default historico
+       * @enum {string}
+       */
+      mode: "historico" | "ml" | "anti_popular";
+      /**
+       * Window
+       * @default 12m
+       * @enum {string}
+       */
+      window: "12m" | "100" | "all";
+      /**
+       * Seed
+       * @description opcional, para reproducir las mismas jugadas
+       */
+      seed?: number | null;
+    };
+    /** GenerateOut */
+    GenerateOut: {
+      /** Game */
+      game: string;
+      /** Mode */
+      mode: string;
+      /** Seed */
+      seed: number;
+      /** Plays */
+      plays: components["schemas"]["PlayOut"][];
+      odds: components["schemas"]["Odds"];
+      /** Notice */
+      notice: string;
+    };
+    /** HTTPValidationError */
+    HTTPValidationError: {
+      /** Detail */
+      detail?: components["schemas"]["ValidationError"][];
+    };
+    /** Odds */
+    Odds: {
+      /** Combinations */
+      combinations: number;
+      /** Jackpot Odds */
+      jackpot_odds: string;
+      /** Jackpot Probability */
+      jackpot_probability: number;
+    };
+    /** PairCount */
+    PairCount: {
+      /** Pair */
+      pair: string;
+      /** Count */
+      count: number;
+    };
+    /** PlayHistory */
+    PlayHistory: {
+      /** Draws */
+      draws: number;
+      /** Cost */
+      cost: number;
+      /** Won */
+      won: number;
+      /** Ret */
+      ret: number;
+      /** Prize Draws */
+      prize_draws: number;
+      /** Best Hits */
+      best_hits: number;
+      /** Hits 3Plus */
+      hits_3plus: number;
+      /** Date From */
+      date_from: string | null;
+      /** Date To */
+      date_to: string | null;
+    };
+    /** PlayOut */
+    PlayOut: {
+      /** Balls */
+      balls: components["schemas"]["BallOut"][];
+      /** Extra */
+      extra: number | null;
+      /** Text */
+      text: string;
+      /** Popularity Score */
+      popularity_score: number;
+      /** Popularity Level */
+      popularity_level: string;
+      /** Popularity Reasons */
+      popularity_reasons: string[];
+      stats?: components["schemas"]["PlayStats"] | null;
+      /** Ml Probabilities */
+      ml_probabilities?: number[] | null;
+      /** Ml Extra Probability */
+      ml_extra_probability?: number | null;
+      /** Ml Base */
+      ml_base?: number | null;
+    };
+    /** PlayStats */
+    PlayStats: {
+      /** Window Draws */
+      window_draws: number;
+      /** Expected Count */
+      expected_count: number;
+      /** Counts */
+      counts: components["schemas"]["BallCount"][];
+      /** Total Count */
+      total_count: number;
+      /** Sum */
+      sum: number;
+      /** Evens */
+      evens: number;
+      /** Highs */
+      highs: number;
+      /** Shape Ok */
+      shape_ok: boolean;
+      /** Frequent Pairs */
+      frequent_pairs: components["schemas"]["PairCount"][];
+      /** Extra Count */
+      extra_count: number | null;
+      /** Extra Expected */
+      extra_expected: number | null;
+      history: components["schemas"]["PlayHistory"] | null;
+    };
+    /** RunsOut */
+    RunsOut: {
+      /** Tested */
+      tested: number;
+      /** Alpha Bonferroni */
+      alpha_bonferroni: number;
+      /** Significant Raw */
+      significant_raw: number;
+      /** Significant Bonferroni */
+      significant_bonferroni: string[];
+      /** Min P Value */
+      min_p_value: number | null;
+      /** Verdict */
+      verdict: string;
+    };
+    /** SeriesPoint */
+    SeriesPoint: {
+      /** Draw Number */
+      draw_number: number;
+      /**
+       * Draw Date
+       * Format: date
+       */
+      draw_date: string;
+      /** Strategy */
+      strategy: number;
+      /** P5 */
+      p5: number;
+      /** P95 */
+      p95: number;
+    };
+    /** ShapeOut */
+    ShapeOut: {
+      /** Sum Min */
+      sum_min: number;
+      /** Sum Max */
+      sum_max: number;
+      /** Sum Mean */
+      sum_mean: number;
+      /** Even Counts */
+      even_counts: {
+        [key: string]: number;
+      };
+      /** High Counts */
+      high_counts: {
+        [key: string]: number;
+      };
+    };
+    /** StatsOut */
+    StatsOut: {
+      /** Game */
+      game: string;
+      /** Window */
+      window: string;
+      /** N Draws */
+      n_draws: number;
+      /** Date From */
+      date_from: string | null;
+      /** Date To */
+      date_to: string | null;
+      odds: components["schemas"]["Odds"];
+      /** Disclaimer */
+      disclaimer: string;
+      /** Frequency */
+      frequency: {
+        [key: string]: number;
+      };
+      /** Number Frequency */
+      number_frequency: {
+        [key: string]: number;
+      } | null;
+      /** Color Frequency */
+      color_frequency: {
+        [key: string]: number;
+      } | null;
+      /** Extra Frequency */
+      extra_frequency: {
+        [key: string]: number;
+      } | null;
+      /** Hot */
+      hot: components["schemas"]["BallStatOut"][];
+      /** Cold */
+      cold: components["schemas"]["BallStatOut"][];
+      /** Overdue */
+      overdue: components["schemas"]["BallStatOut"][];
+      /** Top Pairs */
+      top_pairs: components["schemas"]["ComboOut"][];
+      /** Pair Counts */
+      pair_counts: [string, string, number][];
+      /** Top Triples */
+      top_triples: components["schemas"]["ComboOut"][];
+      shape: components["schemas"]["ShapeOut"] | null;
+      /** Uniformity */
+      uniformity: components["schemas"]["ChiSquareOut"][];
+      runs: components["schemas"]["RunsOut"];
+    };
+    /** SummaryOut */
+    SummaryOut: {
+      /**
+       * Generated
+       * Format: date
+       */
+      generated: string;
+      /** Primary Window */
+      primary_window: number;
+      /** Alpha */
+      alpha: number;
+      /** Alpha Bonferroni */
+      alpha_bonferroni: number;
+      /** Combinations */
+      combinations: number;
+      /** Notes */
+      notes: string[];
+      /** Rows */
+      rows: components["schemas"]["SummaryRow"][];
+    };
+    /** SummaryRow */
+    SummaryRow: {
+      /** Game */
+      game: string;
+      /** Strategy */
+      strategy: string;
+      /** Window */
+      window: number;
+      /** Primary */
+      primary: boolean;
+      /** N Draws */
+      n_draws: number;
+      /**
+       * Date From
+       * Format: date
+       */
+      date_from: string;
+      /**
+       * Date To
+       * Format: date
+       */
+      date_to: string;
+      /** Avg Hits */
+      avg_hits: number;
+      /** Baseline P5 */
+      baseline_p5: number;
+      /** Baseline P95 */
+      baseline_p95: number;
+      /** P Value */
+      p_value: number;
+      /** Above P95 */
+      above_p95: boolean;
+      /** Significant Bonferroni */
+      significant_bonferroni: boolean;
+    };
+    /** ValidationError */
+    ValidationError: {
+      /** Location */
+      loc: (string | number)[];
+      /** Message */
+      msg: string;
+      /** Error Type */
+      type: string;
+      /** Input */
+      input?: unknown;
+      /** Context */
+      ctx?: Record<string, never>;
+    };
+  };
+  responses: never;
+  parameters: never;
+  requestBodies: never;
+  headers: never;
+  pathItems: never;
 }
 export type $defs = Record<string, never>;
 export interface operations {
-    list_games_games_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["GameOut"][];
-                };
-            };
-        };
+  list_games_games_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    list_draws_games__code__draws_get: {
-        parameters: {
-            query?: {
-                from?: string | null;
-                to?: string | null;
-                page?: number;
-                page_size?: number;
-            };
-            header?: never;
-            path: {
-                code: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["DrawPage"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["GameOut"][];
         };
+      };
     };
-    game_stats_games__code__stats_get: {
-        parameters: {
-            query?: {
-                /** @description 'all', '<n>m' (meses) o número de sorteos */
-                window?: string;
-            };
-            header?: never;
-            path: {
-                code: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["StatsOut"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  list_draws_games__code__draws_get: {
+    parameters: {
+      query?: {
+        from?: string | null;
+        to?: string | null;
+        page?: number;
+        page_size?: number;
+      };
+      header?: never;
+      path: {
+        code: string;
+      };
+      cookie?: never;
     };
-    create_backtest_backtest_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["BacktestIn"];
-            };
+        content: {
+          "application/json": components["schemas"]["DrawPage"];
         };
-        responses: {
-            /** @description Successful Response */
-            201: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BacktestOut"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
         };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
     };
-    backtest_summary_backtest_summary_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["SummaryOut"];
-                };
-            };
-        };
+  };
+  game_stats_games__code__stats_get: {
+    parameters: {
+      query?: {
+        /** @description 'all', '<n>m' (meses) o número de sorteos */
+        window?: string;
+      };
+      header?: never;
+      path: {
+        code: string;
+      };
+      cookie?: never;
     };
-    get_backtest_backtest__run_id__get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                run_id: number;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["BacktestOut"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["StatsOut"];
         };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
     };
-    generate_generate_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["GenerateIn"];
-            };
-        };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["GenerateOut"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  create_backtest_backtest_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    run_ingest_ingest_run_post: {
-        parameters: {
-            query?: never;
-            header?: {
-                "x-ingest-token"?: string | null;
-            };
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["BacktestIn"];
+      };
     };
-    all_expected_value_expected_value_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    responses: {
+      /** @description Successful Response */
+      201: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["BacktestOut"];
         };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
     };
-    game_expected_value_games__code__expected_value_get: {
-        parameters: {
-            query?: {
-                /** @description acumulado en pesos para calcular el VE */
-                jackpot?: number | null;
-                /** @description 1 = jugada promedio; 0,5 = la mitad de popular */
-                popularity?: number;
-            };
-            header?: never;
-            path: {
-                code: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  backtest_summary_backtest_summary_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
-    game_picks_games__code__picks_get: {
-        parameters: {
-            query?: {
-                /** @description 'all', '<n>m' (meses) o número de sorteos */
-                window?: string;
-            };
-            header?: never;
-            path: {
-                code: string;
-            };
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+        content: {
+          "application/json": components["schemas"]["SummaryOut"];
         };
+      };
     };
-    game_ml_games__code__ml_get: {
-        parameters: {
-            query?: {
-                model?: "gb" | "logit";
-            };
-            header?: never;
-            path: {
-                code: string;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
-        };
+  };
+  get_backtest_backtest__run_id__get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        run_id: number;
+      };
+      cookie?: never;
     };
-    analyze_analyze_post: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
         };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["AnalyzeIn"];
-            };
+        content: {
+          "application/json": components["schemas"]["BacktestOut"];
         };
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["AnalyzeOut"];
-                };
-            };
-            /** @description Validation Error */
-            422: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HTTPValidationError"];
-                };
-            };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
         };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
     };
-    health_health_get: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            /** @description Successful Response */
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": {
-                        [key: string]: unknown;
-                    };
-                };
-            };
-        };
+  };
+  generate_generate_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
     };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["GenerateIn"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["GenerateOut"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  run_ingest_ingest_run_post: {
+    parameters: {
+      query?: never;
+      header?: {
+        "x-ingest-token"?: string | null;
+      };
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  all_expected_value_expected_value_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+    };
+  };
+  game_expected_value_games__code__expected_value_get: {
+    parameters: {
+      query?: {
+        /** @description acumulado en pesos para calcular el VE */
+        jackpot?: number | null;
+        /** @description 1 = jugada promedio; 0,5 = la mitad de popular */
+        popularity?: number;
+      };
+      header?: never;
+      path: {
+        code: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  game_picks_games__code__picks_get: {
+    parameters: {
+      query?: {
+        /** @description 'all', '<n>m' (meses) o número de sorteos */
+        window?: string;
+      };
+      header?: never;
+      path: {
+        code: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  game_ml_games__code__ml_get: {
+    parameters: {
+      query?: {
+        model?: "gb" | "logit";
+      };
+      header?: never;
+      path: {
+        code: string;
+      };
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  analyze_analyze_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["AnalyzeIn"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["AnalyzeOut"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  overview_overview_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+    };
+  };
+  health_health_get: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody?: never;
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": {
+            [key: string]: unknown;
+          };
+        };
+      };
+    };
+  };
 }

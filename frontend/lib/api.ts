@@ -201,6 +201,49 @@ export type MLOut = {
   };
 };
 
+// Cifras clave del proyecto (/overview).
+export type Overview = {
+  total_draws: number;
+  games: Record<
+    string,
+    { name: string; draws: number; date_from: string | null; date_to: string | null; odds: string }
+  >;
+  backtest: null | {
+    combinations: number;
+    significant: number;
+    nominal: number;
+    alpha_bonferroni: number;
+    strategies: string[];
+  };
+  expected_value: null | Record<
+    string,
+    {
+      price: number;
+      return_current: number | null;
+      non_jackpot_return: number;
+      median_plays: number | null;
+      popularity_rho: number | null;
+      popularity_p: number | null;
+      min_bias: number;
+    }
+  >;
+  ml: null | Record<
+    string,
+    Record<
+      string,
+      {
+        skill: number;
+        ci_low: number;
+        ci_high: number;
+        avg_hits: number;
+        base_p5: number;
+        base_p95: number;
+        beats_random: boolean;
+      }
+    >
+  >;
+};
+
 export type Health = { status: string; games: Record<string, { last_draw_date: string | null; draws: number }> };
 
 // La caché de servidor vive en lib/data.ts ("use cache"); aquí solo están las llamadas.
@@ -211,6 +254,7 @@ export const api = {
   stats: (code: string, window: string) =>
     request<StatsOut>(`/games/${code}/stats?window=${encodeURIComponent(window)}`),
   summary: () => request<SummaryOut>("/backtest/summary"),
+  overview: () => request<Overview>("/overview"),
   analyze: (body: {
     game: string;
     balls: { number: number; color?: string | null }[];

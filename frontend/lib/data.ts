@@ -28,6 +28,12 @@ export async function getStats(code: string, window: string) {
   return api.stats(code, window);
 }
 
+export async function getOverview() {
+  "use cache";
+  cacheLife("minutes");
+  return api.overview();
+}
+
 export async function getML(code: string, model: string) {
   "use cache";
   cacheLife("minutes");

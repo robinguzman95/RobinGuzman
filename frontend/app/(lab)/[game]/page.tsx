@@ -52,7 +52,8 @@ async function GameContent({ params, searchParams }: Props) {
             </Link>
           ))}
         </nav>
-        <h1 className="text-3xl font-bold">Estadísticas de {g.name}</h1>
+        <p className="eyebrow">Laboratorio · Estadísticas</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Estadísticas de {g.name}</h1>
         <p className="text-secondary">
           {num(s.n_draws)} sorteos · {dateEs(s.date_from)} → {dateEs(s.date_to)}
         </p>

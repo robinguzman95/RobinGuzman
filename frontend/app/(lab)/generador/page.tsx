@@ -57,8 +57,9 @@ export default function GeneratorPage() {
 
   return (
     <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold">Generador de jugadas</h1>
+      <header className="space-y-3">
+        <p className="eyebrow">Herramientas · Generador</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Generador de jugadas</h1>
         <p className="max-w-3xl text-secondary">
           Genera jugadas con las balotas que <strong>más han salido</strong> (calientes, con la forma típica de un
           resultado y las parejas más repetidas) y mira, para cada una, cuántas veces salió cada número y cuánto habría

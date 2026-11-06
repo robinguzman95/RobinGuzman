@@ -1,8 +1,17 @@
 # LotoLab
 
 Laboratorio estadístico de Baloto, Revancha, MiLoto y ColorLoto. **No predice**: analiza el
-histórico y comprueba con backtesting si alguna estrategia popular le gana al azar.
-Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
+histórico y comprueba con backtesting, valor esperado y machine learning si alguna estrategia
+popular le gana al azar.
+
+- **Web:** https://lotolab-three.vercel.app — presentación del proyecto en
+  [/proyecto](https://lotolab-three.vercel.app/proyecto)
+- **Autor:** Robin Fernando Guzmán Pérez
+- Reglas del proyecto en [CLAUDE.md](CLAUDE.md).
+
+**Resultado:** ninguna de las 60 combinaciones de estrategia × ventana × juego supera al azar tras
+Bonferroni; el modelo de ML (gradient boosting / regresión logística, walk-forward) tampoco; un
+tiquete de Baloto devuelve en promedio ~26 % de su precio.
 
 ## Estado
 

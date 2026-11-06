@@ -39,7 +39,8 @@ export default function ValePage(props: Props) {
   return (
     <div className="space-y-8">
       <header className="space-y-3">
-        <h1 className="text-3xl font-bold">¿Vale la pena jugar?</h1>
+        <p className="eyebrow">Laboratorio · Valor esperado</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">¿Vale la pena jugar?</h1>
         <p className="max-w-3xl text-secondary">
           El <strong>valor esperado</strong> es lo que devuelve en promedio un tiquete si se jugara muchísimas veces:
           cada premio multiplicado por su probabilidad, usando los premios reales pagados en el último año, la retención

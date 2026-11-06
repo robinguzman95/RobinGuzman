@@ -29,7 +29,8 @@ export default function AnalizadorPage(props: Props) {
   return (
     <div className="space-y-8">
       <header className="space-y-3">
-        <h1 className="text-3xl font-bold">Analizador de jugadas</h1>
+        <p className="eyebrow">Herramientas · Analizador</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Analizador de jugadas</h1>
         <p className="max-w-3xl text-secondary">
           Jugadas armadas con lo que más ha salido: los números calientes, los que se repiten en todas las épocas, los
           que además tienen la forma típica de un resultado ganador, la pareja más repetida y los que llevan más tiempo

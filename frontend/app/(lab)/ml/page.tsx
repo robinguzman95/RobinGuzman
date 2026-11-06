@@ -25,7 +25,8 @@ export default function MLPage(props: Props) {
   return (
     <div className="space-y-8">
       <header className="space-y-3">
-        <h1 className="text-3xl font-bold">Modelo de machine learning</h1>
+        <p className="eyebrow">Laboratorio · Machine learning</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Modelo de machine learning</h1>
         <p className="max-w-3xl text-secondary">
           Un modelo aprende, con la historia de cada balota (cuánto salió en los últimos 10, 25, 50 y 100 sorteos, hace
           cuánto no sale y si salió en el sorteo anterior), qué tan probable es que salga en el próximo. Luego se pone a

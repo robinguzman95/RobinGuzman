@@ -32,7 +32,8 @@ async function BacktestContent() {
   return (
     <div className="space-y-8">
       <header className="space-y-3">
-        <h1 className="text-3xl font-bold">Backtest: ¿alguna estrategia le gana al azar?</h1>
+        <p className="eyebrow">Laboratorio · Backtest</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Backtest: ¿alguna estrategia le gana al azar?</h1>
         <p className="max-w-3xl text-secondary">
           Para cada sorteo, la estrategia solo ve los sorteos anteriores (nunca el que se evalúa). Sus aciertos se
           comparan con 10.000 jugadas al azar sobre los mismos sorteos. Si una estrategia sirviera, su línea quedaría

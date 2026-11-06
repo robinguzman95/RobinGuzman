@@ -73,8 +73,9 @@ export default function MiJugadaPage() {
 
   return (
     <div className="space-y-6">
-      <header className="space-y-2">
-        <h1 className="text-3xl font-bold">Revisar mi jugada</h1>
+      <header className="space-y-3">
+        <p className="eyebrow">Herramientas · Mi jugada</p>
+        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">Revisar mi jugada</h1>
         <p className="max-w-3xl text-secondary">
           Escribe los números que piensas jugar y te mostramos su resumen: cuántas veces ha salido cada uno, la
           probabilidad según el modelo de machine learning, la forma de la jugada, sus parejas frecuentes, qué tan
